@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="'en-GB">
+<head>
+    <meta charset="UTF-8">
+
+    <title>CGS Flood Management </title>
+    <!-- cause i can't get it to work-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+    integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+        crossorigin=""/>
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+    integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+    crossorigin=""></script>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>    
+      <div class="topnav">
+        <a  href="index.html">Home</a>
+        <a  href="find.html">Findings</a>
+        <a class="active" href="map.html">Interactive Map</a>
+        <a href="info.html">Further Information</a>
+        <a href="team.html">Team</a>
+      </div>
+   
+      <div id="main">
+        <h1>Capital Green Space Project 2022</h1>
+        <div class="right">
+            <h2>Flood Management in Edinburgh</h2>
+            <p>Come back to see our interactive map very soon!</p>
+        </div>
+        <div>
+          <div>
+            <!--{{map}}-->
+            <div style="height: 700px;" id="mapid"></div>
+            <!--<iframe src="map.py" loading="eager"></iframe>-->
+          </div>
+          <br>
+        </div>
+      </div>
+    <footer>
+        <p>© 2022 University of Edinburgh</p>
+    </footer>
+</body>
+<script>
+  "use strict";
+  let murray = L.latLng(55.91787, -3.303865);
+  let starea = [{lat: 55.918919, long:-3.304745}, {lat:55.917633, long: -3.312322}, {lat: 55.914877, long: -3.313433}, {lat: 55.913402, long: -3.312498}, {lat: 55.917042, long: 3.301292}]
+  let map = L.map('mapid').setView(murray, 14);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution: '&copy; <a href="http://osm.orgcopyright">OpenStreetMap</a> contributors', maxZoom: 18}).addTo(map);
+  let murrayMarker = L.marker(murray).addTo(map);
+  map.data.add({geometry: new google.maps.Data.Polygon([starea])});
+  murrayMarker.bindPopup("<b>This is Drummond St!</b>").openPopup();
+
+</script>
+</html>
