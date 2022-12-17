@@ -3,42 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <title>CGS Flood Management </title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="main.css">
-</head>
+  </head>
 
 <body>    
-      <div class="topnav">
+      <!-- Jumbotron -->
+  <div class="text-white jumbotron jumbotron-image shadow" 
+      style="margin-bottom:0px; background-image: url('./images/group/floodp3.jpg');
+      height: 50vh;">
+    <div class="d-flex center">
+      <h1>Capital Green Space Project 2022</h1>
+      <h1>Flood Management in Edinburgh</h1>
+    </div>
+  </div>
+      
+      <!-- Navbar -->
+      <div class="topnav" style="margin-bottom:3rem">
         <a  href="index.html">Home</a>
-        <a class="active" href="find.html">Findings</a>
+        <a class="active" href="find.html">Background</a>
         <a href="map.html">Interactive Map</a>
         <a href="info.html">Further Information</a>
         <a href="team.html">Team</a>
       </div>
    
-      <div id="main">
-        <h1>Capital Green Space Project 2022</h1>
-        <div class="right">
-          <h2>Flood Management in Edinburgh</h2>
-          <p>Come back to find out what we learned!</p>
-          <p>Learn about the history of the <a href="https://www.scottish-places.info/features/featurefirst16959.html" target="_blank">Murray Burn</a> and <a href="https://www.scottish-places.info/features/featurefirst2805.html" target="_blank">Water of Leith</a> in the Gazetteer for Scotland.</p>
-          <br>
-          <h3>Flooding animation of our study location</h3>
-          <div id="main">
+      <!-- Main body -->
+      <div id="main" >
+        <div class="center container" styel="padding-top:20px">
+          <h2 ><b>Flooding in Edinburgh - Background</b></h2>
+        </div>
+        <div class="row center">
+            <h3 id="#item1">Water of Leith</h3>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <p class="text-justify">The Water of Leith flows through the North West Pentlands, through the city, until it joins the Forth Estuary at the port of Leith. Over the past 200 years the river has been heavily modified through dams,
+              weirs, lochs, and culverts to accommodate the economy and continuous urban development. But this has led to flood vulnerability in 73 km<sup>2</sup> of its 122 km<sup>2</sup> catchment. After the April 2000 flood, the city
+              of Edinburgh implemented the Flood Risk Management Act and flood prevention schemes, for which walls, gates and other flood defenceswere built. The Harlaw, Threipmuir and Harperring reservoirswere
+              also purchased to improve management.<br>
+              According to Scottish Environment Protection Agency (SEPA) reviews, the catchment is of poor ecological
+              status due to ten impassable barriers, the presence of invasive species, and sewage and farming runoff
+              along the Murray Burn, 2 km of which are in a culvert. Despite the continuous riparian woodland
+              along the main stream, increased use of the Water of Leith Walk and new developments are causing fragmentation and deterioration of the corridors quality.<br>
+              The Water of Leith management plan was set to address some of these issues but only focuses on 18 of the 31.7 km of the main stream, specifically on the popular Water of Leith Walk. The natural flow of this section was mostly maintained due to its hard rock river bed and has seen an increase in conservation efforts through numerous action plans. The Murray Burn on the other hand faces higher pressures with pollution and
+              the culvert but has mostly been neglected by action plans and studies due to its smaller size.</p>
+          </div>
+          <div class="col-6">
+            <img src="./images/catchment.jpg" alt="WoL catchment"><br>
+            <img src="./images/river_management_2.jpg" alt="River Managment">
+          </div>
+        </div>
+
+        <hr class="section-break">
+
+        <div class="row center">
+          <h3>Flooding</h3>
+        </div>
+        <div class="row">
+          <div class="col-4 center">
+            <img data-toggle="modal" data-target="#affectedModal" src="./images/group/people_affected.jpg" alt="flood damage" style="width:100%;cursor:zoom-in">
+            <p style="font-size:0.8em">Click on image to enlarge</p>
+          </div>
+          <!-- Image Modal -->
+          <div class="modal fade" id="affectedModal" tabindex="-1" role="dialog" aria-labelledby="affectedModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="affectedModalLabel">People Affected</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <img src="./images/group/people_affected.jpg">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-8">
+            <div>
+              <p class="text-justify">
+                Due to a combination of coastal, surface and river flooding, SEPA declared 85% of the city of Edinburgh as “in need of protection”, and stated that 284,000 homes, businesses and serviceswere at risk of flooding in 2018, with an increment of 110,000 by 2080s, which could cost the government £31.5 million per year. Factors such as an inadequate drainage systems, poor building construction techniques, and outdated flood defences, combined with homes and businesses already located in flood zones have amplified the risk of flooding.
+              </p>
+            </div>
+          </div>
+        </div>
+          <!-- <div id="main">
             <video width="100%" autoplay loop>
             <source src="./images/Flood_Simulation_V20.mp4" type="video/mp4">
             </video>
             <p style="color:grey">Credit: Video made using ArcGIS and Clipchamp, using Getmapping Plc.</p>
-          </div>
-          <br>
-          <h3>Proposed Restoration</h3>
-          <div class="center">
-            <img src="./images/group/future.jpg" alt="future">
-          </div>
-        </div>
+          </div> -->
       </div>
     <footer>
-        <p>© 2022 University of Edinburgh</p>
+        <p class="center">© 2022 University of Edinburgh</p>
     </footer>
 </body>
 </html>
