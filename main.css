@@ -49,11 +49,9 @@ div#main{
 }
 
 h1{
-    color: var(--accent);
+    color: var(--accent-dark);
     font-weight: bold;
     text-align: center;
-    text-shadow: -1px 0 var(--black), 0 1px var(--black), 1px 0 var(--black), 0 -1px var(--black);
-    text-shadow: 2px 2px 4px var(--black)
 }
 
 /* Profile Card */
@@ -148,3 +146,8 @@ hr.section-break{
   max-width: 800px;
   width: 80%;
 }
+
+.mask-custom {
+    backdrop-filter: blur(1px);
+    background-color: rgba(42,80,71,0.55);
+  }
