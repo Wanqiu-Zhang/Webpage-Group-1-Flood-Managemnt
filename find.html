@@ -9,99 +9,213 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="main.css">
-  </head>
+</head>
 
 <body>    
       <!-- Jumbotron -->
-  <div class="text-white jumbotron jumbotron-image shadow" 
-      style="margin-bottom:0px; background-image: url('./images/group/floodp3.jpg');
-      height: 50vh;">
+  <div class="text-white jumbotron jumbotron-image shadow mask mask-custom" 
+      style="margin-bottom:0px; background-image: url('./images/header.jpg'); height: 50vh;">
     <div class="d-flex center">
       <h1>Capital Green Space Project 2022</h1>
       <h1>Flood Management in Edinburgh</h1>
     </div>
   </div>
       
-      <!-- Navbar -->
-      <div class="topnav" style="margin-bottom:3rem">
-        <a  href="index.html">Home</a>
-        <a class="active" href="find.html">Background</a>
-        <a href="map.html">Interactive Map</a>
-        <a href="info.html">Further Information</a>
-        <a href="team.html">Team</a>
-      </div>
+  <!-- Navbar -->
+  <div class="topnav sticky-top" style="margin-bottom:3rem">
+    <a  href="index.html">Home</a>
+    <a class="active" href="find.html">Findings</a>
+    <a href="map.html">Interactive Map</a>
+    <a href="info.html">Further Information</a>
+    <a href="team.html">Team</a>
+  </div>
    
-      <!-- Main body -->
-      <div id="main" >
-        <div class="center container" styel="padding-top:20px">
-          <h2 ><b>Flooding in Edinburgh - Background</b></h2>
-        </div>
-        <div class="row center">
-            <h3 id="#item1">Water of Leith</h3>
-        </div>
-        <div class="row">
-          <div class="col-6">
-            <p class="text-justify">The Water of Leith flows through the North West Pentlands, through the city, until it joins the Forth Estuary at the port of Leith. Over the past 200 years the river has been heavily modified through dams,
-              weirs, lochs, and culverts to accommodate the economy and continuous urban development. But this has led to flood vulnerability in 73 km<sup>2</sup> of its 122 km<sup>2</sup> catchment. After the April 2000 flood, the city
-              of Edinburgh implemented the Flood Risk Management Act and flood prevention schemes, for which walls, gates and other flood defenceswere built. The Harlaw, Threipmuir and Harperring reservoirswere
-              also purchased to improve management.<br>
-              According to Scottish Environment Protection Agency (SEPA) reviews, the catchment is of poor ecological
-              status due to ten impassable barriers, the presence of invasive species, and sewage and farming runoff
-              along the Murray Burn, 2 km of which are in a culvert. Despite the continuous riparian woodland
-              along the main stream, increased use of the Water of Leith Walk and new developments are causing fragmentation and deterioration of the corridors quality.<br>
-              The Water of Leith management plan was set to address some of these issues but only focuses on 18 of the 31.7 km of the main stream, specifically on the popular Water of Leith Walk. The natural flow of this section was mostly maintained due to its hard rock river bed and has seen an increase in conservation efforts through numerous action plans. The Murray Burn on the other hand faces higher pressures with pollution and
-              the culvert but has mostly been neglected by action plans and studies due to its smaller size.</p>
-          </div>
-          <div class="col-6">
-            <img src="./images/catchment.jpg" alt="WoL catchment"><br>
-            <img src="./images/river_management_2.jpg" alt="River Managment">
-          </div>
-        </div>
+  <!-- Main body -->
+  <div id="main" >
+    <div class="center container" styel="padding-top:20px">
+      <h2 ><b>Flooding in Edinburgh - Background</b></h2>
+    </div>
+    <div class="row center">
+        <h3 id="#item1">Water of Leith</h3>
+    </div>
 
-        <hr class="section-break">
-
-        <div class="row center">
-          <h3>Flooding</h3>
-        </div>
-        <div class="row">
-          <div class="col-4 center">
-            <img data-toggle="modal" data-target="#affectedModal" src="./images/group/people_affected.jpg" alt="flood damage" style="width:100%;cursor:zoom-in">
-            <p style="font-size:0.8em">Click on image to enlarge</p>
-          </div>
-          <!-- Image Modal -->
-          <div class="modal fade" id="affectedModal" tabindex="-1" role="dialog" aria-labelledby="affectedModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="affectedModalLabel">People Affected</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <img src="./images/group/people_affected.jpg">
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-8">
-            <div>
-              <p class="text-justify">
-                Due to a combination of coastal, surface and river flooding, SEPA declared 85% of the city of Edinburgh as “in need of protection”, and stated that 284,000 homes, businesses and serviceswere at risk of flooding in 2018, with an increment of 110,000 by 2080s, which could cost the government £31.5 million per year. Factors such as an inadequate drainage systems, poor building construction techniques, and outdated flood defences, combined with homes and businesses already located in flood zones have amplified the risk of flooding.
-              </p>
-            </div>
-          </div>
-        </div>
-          <!-- <div id="main">
-            <video width="100%" autoplay loop>
-            <source src="./images/Flood_Simulation_V20.mp4" type="video/mp4">
-            </video>
-            <p style="color:grey">Credit: Video made using ArcGIS and Clipchamp, using Getmapping Plc.</p>
-          </div> -->
+    <!--start of Sections-->
+    <div class="row">
+      <div class="col-8">
+        <p class="text-justify">The Water of Leith flows through the North West Pentlands, through the city, until it joins the Forth Estuary at the port of Leith. Over the past 200 years the river has been heavily modified through dams, weirs, lochs, and culverts to accommodate the economy and continuous urban development. But this has led to flood vulnerability in 73 km<sup>2</sup> of its 122 km<sup>2</sup> catchment. After the April 2000 flood, the city of Edinburgh implemented the Flood Risk Management Act and flood prevention schemes, for which walls, gates and other flood defenceswere built. The Harlaw, Threipmuir and Harperring reservoirswere also purchased to improve management.<br>
+        According to Scottish Environment Protection Agency (SEPA) reviews, the catchment is of poor ecological status due to ten impassable barriers, the presence of invasive species, and sewage and farming runoff along the Murray Burn, 2 km of which are in a culvert. Despite the continuous riparian woodland along the main stream, increased use of the Water of Leith Walk and new developments are causing fragmentation and deterioration of the corridors quality.<br>
+        The Water of Leith management plan was set to address some of these issues but only focuses on 18 of the 31.7 km of the main stream, specifically on the popular Water of Leith Walk. The natural flow of this section was mostly maintained due to its hard rock river bed and has seen an increase in conservation efforts through numerous action plans. The Murray Burn on the other hand faces higher pressures with pollution and the culvert but has mostly been neglected by action plans and studies due to its smaller size.</p>
       </div>
-    <footer>
-        <p class="center">© 2022 University of Edinburgh</p>
-    </footer>
+
+      <div class="col-4 center">
+        <img data-toggle="modal" data-target="#catchmentModal" src="./images/catchment.jpg" alt="WoL catchment" style="width:100%;cursor:zoom-in">
+        <p style="font-size:0.8em; color:grey">Click on image to enlarge</p>
+        <!-- <img data-toggle="modal" data-target="#managementModal" src="./images/river_management_2.jpg" alt="River Managment" style="width:100%;cursor:zoom-in">
+        <p style="font-size:0.8em; color:grey">Click on image to enlarge</p> -->
+      </div>
+      <!-- Image Modal Catchment-->
+      <div class="modal fade" id="catchmentModal" tabindex="-1" role="dialog" aria-labelledby="catchmentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="catchmentModalLabel">Water of Leith Catchment</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img src="./images/catchment.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Image Modal Management-->
+      <!-- <div class="modal fade" id="managementModal" tabindex="-1" role="dialog" aria-labelledby="managementModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="managementModalLabel">River Management</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img src="./images/river_management_2.jpg">
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+    </div>
+
+    <hr class="section-break">
+
+    <div class="row center">
+      <h3>Flooding</h3>
+    </div>
+    <div class="row">
+      <div class="col-4 center">
+        <img data-toggle="modal" data-target="#affectedModal" src="./images/group/people_affected.jpg" alt="flood damage" style="width:100%;cursor:zoom-in">
+        <p style="font-size:0.8em; color:grey">Click on image to enlarge</p>
+      </div>
+      <!-- Image Modal People Affected-->
+      <div class="modal fade" id="affectedModal" tabindex="-1" role="dialog" aria-labelledby="affectedModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="affectedModalLabel">People Affected</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img src="./images/group/people_affected.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-8">
+        <div>
+          <p class="text-justify">
+            Due to a combination of coastal, surface and river flooding, SEPA declared 85% of the city of Edinburgh as “in need of protection”, and stated that 284,000 homes, businesses and serviceswere at risk of flooding in 2018, with an increment of 110,000 by 2080s, which could cost the government £31.5 million per year. Factors such as an inadequate drainage systems, poor building construction techniques, and outdated flood defences, combined with homes and businesses already located in flood zones have amplified the risk of flooding.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-break">
+
+    <div class="row center">
+      <h3>Pressures and Opportunities</h3>
+    </div>
+
+    <div class="row">
+      <div class="col-8">
+        <div>
+          <p class="text-justify">
+            Traditional river management like weirs, walls and culverts have been effective defences against small floods, but as seen in 2000 are not effective for bigger floods. They currently restrict the natural flow of the river and add additional pressure onto the system. The design of the culvert can easily lead to blockages due to debris, increasing the likelihood of flooding in the area. The sewage system runs parallel to the culvert and its overflow is not restricted during flooding events. <br> New urban developments along the river were observed, which will not only be directly impacted by flooding, but also create more impermeable surfaces reducing water infiltration and increasing surface runoff.</p>
+            <p class="text-justify">Based on SEPA Flood data, Population at Risk data and River Management data, Murray Burn, Saughton Park, Murrayfield and Inverleith Parkwere considered flood management opportunities. Following the natural river management guidelines, solutions such as offline storage areas, leaky barriers, creating floodplain and floodplain woodlands are to be considered. The efficiency of these methods depends on the number of storage areas and the total storage volume. Considering the large amount of storage needed, Saughton Park only has limited potential as an offline storage area. Inverleith Park was deemed unsuitable for storage due to the topography of the area. Flood management schemes at Murrayfield are already improving the location. Murray Burn has frequent flooding and, due to the site<sup>'</sup>s location in the greenbelt, it has the space required to implement a variety of methods.</p>
+        </div>
+      </div>
+
+      <div class="col-4 center">
+        <img data-toggle="modal" data-target="#pressureModal" src="./images/management_map.jpg" alt="flood damage" style="width:100%;cursor:zoom-in">
+        <p style="font-size:0.8em; color:grey">Click on image to enlarge</p>
+      </div>
+      <!-- Image Modal Pressures-->
+      <div class="modal fade" id="pressureModal" tabindex="-1" role="dialog" aria-labelledby="pressureModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="pressureModalLabel">Managment and Pressures</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img src="./images/management_map.jpg">
+            </div>
+          </div>
+      </div>
+    </div>
+    </div>
+  
+
+    <hr class="section-break">
+
+    <div class="row center">
+      <h3>Murray Burn</h3>
+    </div>
+    <div class="row">
+      
+      <div class="col-4 center">
+        <img data-toggle="modal" data-target="#murrayModal" src="./images/group/future.jpg" alt="flood damage" style="width:100%;cursor:zoom-in">
+        <p style="font-size:0.8em; color:grey">Click on image to enlarge</p>
+      </div>
+      <!-- Image Modal Murray Burn-->
+      <div class="modal fade" id="murrayModal" tabindex="-1" role="dialog" aria-labelledby="murrayModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="murrayModalLabel">People Affected</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img src="./images/group/future.jpg">
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-8">
+          <div>
+            <p class="text-justify">
+              In its current state, the study area could hold 188.323 m<sup>3</sup> of water. To improve the current agricultural land for flood management and habitat, wads, brushes, willows and other trees would be planted along the riverbanks to increase the roughness and prevent erosion. A leaky barrier could be introduced to slow the river, creating a pond for water storage.<br> We would build paths, benches, information points and four entrance points to maximise public accessibility of the green space. We believe this plan can be helpful to reduce the flood risk in this area and reduce deprivation.
+            </p>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    <hr class="section-break">
+
+    <div class="row center">
+      <h3>Flood Model</h3>
+    </div>
+
+    <div class="row center">
+      <video width="80%" autoplay loop>
+      <source src="./images/Flood_Simulation_V20.mp4" type="video/mp4">
+      </video>
+      <p style="font-size:0.8em; color:grey">Credit: Video made using ArcGIS and Clipchamp, using Getmapping Plc.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p class="center">© 2022 University of Edinburgh</p>
+  </footer>
 </body>
 </html>
