@@ -45,17 +45,18 @@ img{
 div#main{
     margin: 0px auto;
     width: 90%;
-    max-width: 1000px;
+    /* max-width: 1000px; */
 }
 
-/* div#main .center{
-    margin: 0px auto;
-} */
-
 h1{
-    color: var(--accent);
+    color: var(--accent-dark);
     font-weight: bold;
     text-align: center;
+}
+
+p{
+    text-align: justify;
+    max-width: 80ch;
 }
 
 /* Profile Card */
@@ -137,27 +138,21 @@ div.right{
     margin-bottom: 10px;
 }
 
-/* collapse */
-#module {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-  
-  
-  #module #collapseExample.collapse:not(.show) {
-    display: block;
-    height: 5rem;
-    overflow: hidden;
-  }
-  
-  #module #collapseExample.collapsing {
-    height: 5rem;
-  }
-  
-  #module a.collapsed::after {
-    content: '+ Show More';
-  }
-  
-  #module a:not(.collapsed)::after {
-    content: '- Show Less';
+/*jumbotron*/
+.jumbotron-image {
+  background-position: center center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  border-radius: 0;
+}
+
+hr.section-break{
+  margin: 25px auto;
+  max-width: 800px;
+  width: 80%;
+}
+
+.mask-custom {
+    backdrop-filter: blur(1px);
+    background-color: rgba(42,80,71,0.55);
   }
