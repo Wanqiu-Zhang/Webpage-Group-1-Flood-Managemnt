@@ -54,6 +54,11 @@ h1{
     text-align: center;
 }
 
+p{
+    text-align: justify;
+    max-width: 80ch;
+}
+
 /* Profile Card */
 
 .cardContainer{
