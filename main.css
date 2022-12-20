@@ -7,8 +7,9 @@
 
 body{
     font-family: sans-serif;
-    color: var(--black);
     margin: 0px;
+    /* background-color: rgba(66, 128, 113, 0.12); */
+    background-color: #fefefe;
 }
 
 img{
@@ -21,6 +22,8 @@ img{
     background-color: var(--white);
     overflow: hidden;
     border-bottom: 1px solid #2f5c51;
+    /* background-color: #FEFEFE; */
+    background-color: #BCDCD4;
 }
   
 /* Style the links inside the navigation bar */
@@ -126,6 +129,8 @@ footer {
     margin-top: 20px;
     background-color: var(--accent);
     color: var(--white);
+    /* width: 100%;
+    bottom:0;  */
 }
 
 div.center{
@@ -157,8 +162,3 @@ hr.section-break{
   max-width: 800px;
   width: 80%;
 }
-
-.mask-custom {
-    backdrop-filter: blur(1px);
-    background-color: rgba(42,80,71,0.55);
-  }
