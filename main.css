@@ -162,3 +162,13 @@ hr.section-break{
   max-width: 800px;
   width: 80%;
 }
+
+/*carousel*/
+.carousel-inner  {
+    max-height : 500px;
+    max-width : 700px;
+}
+.carousel-item {
+    height : 100%;
+    width : 100%;
+}
