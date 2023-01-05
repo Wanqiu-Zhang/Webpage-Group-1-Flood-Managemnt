@@ -6,12 +6,14 @@
   <meta name="viewport" content="width=device-width,  initial-scale=1">
   <title>CGS Flood Management </title>
   <link rel="stylesheet" href="main.css">
-  <!-- For container -->
+  <!-- W3CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- Container -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Data file -->
   <script src="data_proposal.js" type="text/javascript"></script>
-  <!-- The following parts come from Leaflet -->
+  <!-- Leaflet -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
   <script src="leaflet-polygon.fillPattern.js"></script>
@@ -19,57 +21,78 @@
 
 <body>
   <div class="topnav">
-    <a href="index.html">Home</a>
-    <a href="find.html">Findings</a>
+    <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/index.html">Home</a>
+    <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/find.html">Findings</a>
     <a class="active" href="map.html">Interactive Map</a>
-    <a href="info.html">Further Information</a>
-    <a href="team.html">Team</a>
+    <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/info.html">Further Information</a>
+    <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/team.html">Team</a>
   </div>
-  <div id="main">
-    <h1 style="margin-top:20px">Capital Green Space Project 2022</h1>
-    <div class="right" style="margin-top:15px">
-      <h2>Flood Management in Edinburgh</h2>
-      <p>Come back to see our interactive map very soon!</p>
+  <div class="container" style="max-width:100%">
+    <div class="row d-flex">
+      <div class="col-sm-2" style="margin-top: 20px; overflow: auto; height: 85vh;">
+        <button onclick="accordion('routing')" class="w3-button w3-block w3-left-align">
+          <b>Routing to Greenspace</b></button>
+          <div id="routing" class="w3-container w3-hide">
+            <p>(Coming soon...) Go to one of the accessible greenspaces in Edinburgh to relax yourself! Input the starting Post Code (e.g. EH8 9RR) and choose a greenspace in the list, then click "Route".</p>
+            <form class="w3-container">
+              <input class="w3-input w3-border" type="text" placeholder="Start Post Code">
+              <select class="w3-select w3-border" name="option">
+                <option value="" disabled selected>Desternation Greenspace</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+              </select><p></p>
+              <button class="w3-btn w3-teal">Route</button><p></p>
+              </form>
+          </div>
+        <button onclick="accordion('layer')" class="w3-button w3-block w3-left-align">
+          <b>Special Layer Control</b></button>
+          <div id="layer" class="w3-container w3-hide">
+            <details>
+              <summary>Proposed Greenspace</summary>
+              <div class="w3-display-container">
+                <img src="images/woodland.jpg" class="w3-hover-opacity" alt="Woodland!!!" onclick="turnonwoodland()">
+                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Woodland</div>
+              </div>
+              <div style="margin-top:10px" class="w3-display-container">
+                <img src="images/meadow.jpg" class="w3-hover-opacity" alt="Meadow" onclick="turnonmeadow()")>
+                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Meadow</div>
+              </div>
+              <div style="margin-top:10px" class="w3-display-container">
+                <img src="images/willow.jpeg" class="w3-hover-opacity" alt="Livingwillow" onclick="turnonwillow()">
+                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Livingwillow</div>
+              </div>
+              <div style="margin-top:10px" class="w3-display-container">
+                <img src="images/bush.jpg" class="w3-hover-opacity" alt="Bush" onclick="turnonbush()")>
+                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Bush</div>
+              </div>
+              <div style="margin-top:10px" class="w3-display-container">
+                <img src="images/largewood.jpg" class="w3-hover-opacity" alt="Large Wood" onclick="turnonlargewood()")>
+                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Large Wood</div>
+              </div>
+            </details>
+            <details>
+              <summary>River Management</summary>
+              <div class="w3-display-container">
+                <img src="images/dam.JPG" class="w3-hover-opacity" alt="dam" onclick="turnonwoodland()">
+                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Dam</div>
+              </div>
+              <div style="margin-top:10px" class="w3-display-container">
+                <img src="images/wall.jpeg" class="w3-hover-opacity" alt="Flood Wall" onclick="turnonmeadow()")>
+                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Flood Wall</div>
+              </div>
+            </details>  
+          </div>
+          <button onclick="accordion('oracle')" class="w3-button w3-block w3-left-align">
+            <b>Quries</b></button>
+            <div id="oracle" class="w3-container w3-hide">
+              <p>Coming soon...</p>
+            </div>
+      </div>
+      <div class="col-10" style="height: 85vh;" id="mapid"></div><br>
     </div>
   </div>
-  <div class="container" style="max-width: max-content;">
-    <div class="row">
-      <div class="col-md-2">
-        <h3>Proposed Greenspace</h3>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <p>Woodland</p>
-              <img src="images/woodland.jpg" alt="Woodland" onclick="turnonwoodland()">
-            </div>
-            <div class="col-md-6">
-              <p>Meadow</p>
-              <img src="images/meadow.jpg" alt="Meadow" onclick="turnonmeadow()">
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <p>Livingwillow</p>
-              <img src="images/willow.jpeg" alt="Livingwillow" onclick="turnonwillow()">
-            </div>
-            <div class="col-md-6">
-              <p>Bush</p>
-              <img src="images/bush.jpg" alt="Bush" onclick="turnonbush()">
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <!--{{map}}-->
-      <div class="col-md-8" style="height: 800px;" id="mapid"></div><br>
-      <div class="col-md-2">
-        <img src="images/dam.JPG" alt="Dam" onclick="turnonLayer()">
-      </div>
-    </div>
-  </div>
-  <footer>
+  <footer class="fixed-bottom center">
     <p>© 2022 University of Edinburgh</p>
   </footer>
 </body>
@@ -154,20 +177,6 @@
     },
     style: {stroke: false, fill: 'url(symbologies/woodland.png)', fillOpacity:'1.0'}
   });
-  /*
-  var propopoly = L.geoJSON(polygon, {
-    onEachFeature: onEachFeature,
-    style: function(poly) {
-      switch (poly.properties.Type) {
-        case 'Bush': return {stroke: false, fill: 'url(symbologies/bush.png)', fillOpacity:'1.0'};
-        case 'Large Wood': return {stroke: false, fill: 'url(symbologies/largewood.png)', fillOpacity:'1.0'};
-        case 'Livewillow': return {stroke: false, fill: 'url(symbologies/willow.png)', fillOpacity:'1.0'};
-        case 'Meadow': return {stroke: false, fill: 'url(symbologies/meadow.png)', fillOpacity:'1.0'};
-        case 'River': return {stroke: false, fill: 'url(symbologies/river.png)', fillOpacity:'1.0'};
-        case 'Woodland': return {stroke: false, fill: 'url(symbologies/woodland.png)', fillOpacity:'1.0'}
-      }
-    }
-  });*/
   var wall = L.geoJSON(line,{
     onEachFeature: onEachFeature,
     filter: function(line, layer) {
@@ -182,17 +191,6 @@
     },
     style: {color: '#808080', weight:'10'}
   });
-
-  /*
-  var propoline = L.geoJSON(line, {
-    onEachFeature: onEachFeature,
-    style: function(line) {
-      switch (line.properties.Type) {
-        case 'Flood Wall': return {color: "#00008b", weight:'8'};
-        case 'Path': return {color: '#808080', weight:'10'}
-      }
-    }
-  }); */
   var bench = L.geoJSON(point, {
     onEachFeature: onEachFeature,
     filter: function(point, layer) {
@@ -202,7 +200,6 @@
       return L.marker(latlng,{icon:benchicon});
     }
   });
-  
   var entrance = L.geoJSON(point, {
     onEachFeature: onEachFeature,
     filter: function(point, layer) {
@@ -230,33 +227,19 @@
       return L.marker(latlng,{icon:treeicon});
     }
   });
-  /*
-  var propopoint = L.geoJSON(point, {
-    onEachFeature: onEachFeature,
-    pointToLayer: function(point, latlng) {
-      switch (point.properties.Type) {
-        case 'Bench': return L.marker(latlng,{icon:benchicon});
-        case 'Entrance': return L.marker(latlng,{icon:entranceicon});
-        case 'Map & Guide': return L.marker(latlng,{icon:mapicon});
-        case 'Tree': return L.marker(latlng,{icon:treeicon})
-      }
-    }
-  });*/
   var proposal = L.layerGroup([bush, largewood, willow, meadow, river, woodland, wall, path, bench, entrance, maps, tree]).addTo(map);
   var baseMaps = {"CartoDB Positron": graymap, "OpenStreetMap": osm};
   var overlayMaps = {"Proposal": proposal};
   var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
   var scale = L.control.scale().addTo(map);
-  var woodlandClickNum = 1;
   function turnonwoodland() {
-    if (woodlandClickNum%2==0){
+    if ((map.hasLayer(woodland)) || (map.hasLayer(tree))){
       woodland.remove();
       tree.remove();
     } else {
       woodland.addTo(map);
       tree.addTo(map);
     }
-    woodlandClickNum+=1;
   };
   function turnonmeadow() {
     if (map.hasLayer(meadow)){
@@ -279,10 +262,25 @@
       bush.addTo(map);
     }
   };
+  function turnonlargewood() {
+    if (map.hasLayer(largewood)){
+      largewood.remove();
+    } else {
+      largewood.addTo(map);
+    }
+  };
   function onEachFeature(feature, layer) {
     if (feature.properties && feature.properties.Type) {
         layer.bindPopup(feature.properties.Type);
     }
   };
+  function accordion(id) {
+    var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
 </script>
 </html>
