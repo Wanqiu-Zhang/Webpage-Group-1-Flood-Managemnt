@@ -7,8 +7,9 @@
 
 body{
     font-family: sans-serif;
-    color: var(--black);
     margin: 0px;
+    /* background-color: rgba(66, 128, 113, 0.12); */
+    background-color: #fefefe;
 }
 
 img{
@@ -17,16 +18,20 @@ img{
 }
 
 /* Add a background color to the top navigation */
-.topnav {
-    background-color: var(--accent);
+.topnav{
+    background-color: var(--white);
     overflow: hidden;
+    border-bottom: 1px solid #2f5c51;
+    /* background-color: #FEFEFE; */
+    background-color: #BCDCD4;
 }
   
 /* Style the links inside the navigation bar */
 .topnav a {
     float: left;
-    color: var(--white);
+    color: var(--black);
     text-align: center;
+    opacity: 2rem;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
@@ -34,12 +39,13 @@ img{
   
   /* Change the color of links on hover */
   .topnav a:hover {
-    background-color: var(--accent-dark);
+    background-color: var(--accent);
   }
   
 /* Add a color to the active/current link */
 .topnav a.active {
-    background-color: var(--accent-dark);
+    text-decoration-line: underline;
+    font-weight: bolder;
 }
 
 div#main{
@@ -94,6 +100,7 @@ p{
 .title {
   color: grey;
   font-size: 18px;
+  align-self: center;
 }
 
 a.button{
@@ -118,8 +125,12 @@ footer {
     display: flex;
     justify-content: center;
     padding: 5px;
+    padding-top: 20px;
+    margin-top: 20px;
     background-color: var(--accent);
     color: var(--white);
+    /* width: 100%;
+    bottom:0;  */
 }
 
 div.center{
@@ -152,7 +163,12 @@ hr.section-break{
   width: 80%;
 }
 
-.mask-custom {
-    backdrop-filter: blur(1px);
-    background-color: rgba(42,80,71,0.55);
-  }
+/*carousel*/
+.carousel-inner  {
+    max-height : 500px;
+    max-width : 700px;
+}
+.carousel-item {
+    height : 100%;
+    width : 100%;
+}
