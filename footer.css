@@ -1,0 +1,29 @@
+
+footer div.title{
+    display: flex;
+    background-color: var(--black);
+    color: var(--grey);
+    padding-top: 10px;
+    padding-left: 40px;
+}
+
+footer div.title h6{
+    font-family: var(--font-title);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+footer div.copyright {
+    display: flex;
+    padding: 5px;
+    padding-top: 10px;
+    padding-left: 40px;
+    font-size:0.8em;
+    background-color: var(--white);
+    color: var(--grey);
+}
+
+footer div.copyright p{
+    margin-bottom: 0.5rem;
+    font-size: 0.6rem;
+}
