@@ -1,0 +1,81 @@
+/* Profile Card */
+div.cardContainer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    max-width: 800px;
+    margin: 10px auto 20px;
+}
+
+div.card {
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+  width: 200px;
+  margin: 10px 20px;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  border-radius: 4px;
+  background-color: var(--white);
+  border-top: 8px solid var(--accent);
+}
+
+div.card2 {
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+    width: 300px;
+    margin: 10px 20px;
+    padding: 10px 10px;
+    /* text-align: center; */
+    display: flex;
+    flex-flow: column;
+    border-radius: 4px;
+    background-color: var(--white);
+    border-top: 8px solid var(--accent);
+  }
+
+div.card h4{
+    font-size: 1.3rem;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+div.card p.info{
+    font-size: 1rem;
+    text-align: left;
+    padding: 8px 8px;
+    min-height: 66px;
+    margin: 0px;
+}
+
+div.card p.degree{
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--grey);
+}
+
+div.card p.role {
+    font-size: 1.1rem;
+    align-self: center;
+    padding-top: 10px;
+    min-height: 66px;
+    margin: 0px;
+}
+
+div.card img{
+    max-width: 120px;
+    border-radius: 4px;
+}
+
+div.card img.full{
+    max-width: calc(100% - 20px);
+    margin: 5px 10px;
+}
+
+div.card a.button{
+    margin-top: auto;
+    border: none;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
