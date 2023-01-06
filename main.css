@@ -1,51 +1,23 @@
-:root{
-    --black: #222222;
-    --white: #fcfcfc;
-    --accent: #428071;
-    --accent-dark: #2f5c51;
-}
+@import "vars.css";
+@import "header.css";
+@import "nav.css";
+@import "footer.css";
+@import "card.css";
+
+
 
 body{
-    font-family: sans-serif;
+    font-family: var(--font);
+    font-size: 1rem;
+    line-height: 1.42857143;
+    color: var(--black);
     margin: 0px;
-    /* background-color: rgba(66, 128, 113, 0.12); */
-    background-color: #fefefe;
+    background-color: var(--background);
 }
 
 img{
     max-width: 100%;
     margin: 0px auto;
-}
-
-/* Add a background color to the top navigation */
-.topnav{
-    background-color: var(--white);
-    overflow: hidden;
-    border-bottom: 1px solid #2f5c51;
-    /* background-color: #FEFEFE; */
-    background-color: #BCDCD4;
-}
-  
-/* Style the links inside the navigation bar */
-.topnav a {
-    float: left;
-    color: var(--black);
-    text-align: center;
-    opacity: 2rem;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-  
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: var(--accent);
-  }
-  
-/* Add a color to the active/current link */
-.topnav a.active {
-    text-decoration-line: underline;
-    font-weight: bolder;
 }
 
 div#main{
@@ -54,83 +26,34 @@ div#main{
     /* max-width: 1000px; */
 }
 
-h1{
-    color: var(--accent-dark);
-    font-weight: bold;
-    text-align: center;
-}
-
 p{
-    text-align: justify;
-    max-width: 80ch;
+    /* text-align: justify; */
+    max-width: 77ch;
 }
-
-/* Profile Card */
-
-.cardContainer{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    max-width: 800px;
-    margin: 0px auto;
+a{
+    color: var(--accent);
 }
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 200px;
-  margin: 10px 20px;
-  text-align: center;
-  display: flex;
-  flex-flow: column;
-  border-radius: 2px;
-}
-
-.card h1{
-    font-size: 1.2em;
-}
-
-.card img{
-    max-width: 120px;
-}
-
-.card a.button{
-    margin-top: auto;
-}
-
-.title {
-  color: grey;
-  font-size: 18px;
-  align-self: center;
+a:hover{
+    color: var(--accent);
 }
 
 a.button{
-    background-color:var(--accent);
+    background-color:var(--white);
     border-radius: 2px;
-    color: var(--white);
+    color: var(--accent);
     padding: 12px 28px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     transition-duration: 0.4s;
+    border: solid 1px var(--accent);
 }
  
 a.button:hover {
-  background-color: var(--accent-dark); 
+  background-color: var(--accent);
   color: var(--white);
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-footer {
-    display: flex;
-    justify-content: center;
-    padding: 5px;
-    padding-top: 20px;
-    margin-top: 20px;
-    background-color: var(--accent);
-    color: var(--white);
-    /* width: 100%;
-    bottom:0;  */
 }
 
 div.center{
@@ -149,26 +72,8 @@ div.right{
     margin-bottom: 10px;
 }
 
-/*jumbotron*/
-.jumbotron-image {
-  background-position: center center;
-  background-repeat:no-repeat;
-  background-size: cover;
-  border-radius: 0;
-}
-
 hr.section-break{
   margin: 25px auto;
   max-width: 800px;
   width: 80%;
-}
-
-/*carousel*/
-.carousel-inner  {
-    max-height : 500px;
-    max-width : 700px;
-}
-.carousel-item {
-    height : 100%;
-    width : 100%;
 }
