@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,  initial-scale=1">
   <title>CGS Flood Management </title>
   <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/map.css">
   <!-- W3CSS -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <!-- Container -->
@@ -34,103 +34,115 @@
   <!-- Routing Machine -->
   <script src="plugins/leaflet-routing-machine.js"></script>
   <link rel="stylesheet" href="plugins/leaflet-routing-machine.css">
+  <!-- introjs-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/6.0.0/intro.js" integrity="sha512-iC2jUAfCjQVVR2eGiPYjV2lb7ZIF0Tx3xPj/PdGZSJkSJVz5y+88tRwshNmrso1twhzhSQwBPXNLdAqUYmRAPg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/6.0.0/introjs.css" integrity="sha512-4OzqLjfh1aJa7M33b5+h0CSx0Q3i9Qaxlrr1T/Z+Vz+9zs5A7GM3T3MFKXoreghi3iDOSbkPMXiMBhFO7UBW/g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
   <!-- Navbar -->
   <div class="topnav sticky-top" style="margin-bottom: 0px;">
-    <a href="index.html">Home</a>
-    <a href="find.html">Report</a>
+    <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/index.html">Home</a>
+    <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/find.html">Report</a>
     <a class="active" href="map.html">Visualisation</a>
-    <a href="info.html">Other Research</a>
-    <a href="team.html">About us</a>
+    <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/info.html">Other Research</a>
+    <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/team.html">About us</a>
   </div>
-  <div class="container" style="max-width:100%">
-    <div class="row d-flex">
-      <div class="col-sm-2" style="margin-top: 20px; overflow: auto; height: 85vh;">
-        <button onclick="accordion('routing')" class="w3-button w3-block w3-left-align">
-          <b>Routing to Greenspace</b></button>
-          <div id="routing" class="w3-container w3-hide">
-            <p>Go to greenspaces to relax yourself after classes!</p>
-            <form class="w3-container">
-              <select class="w3-select w3-border" name="option">
-                <option value="" disabled selected>Desternation Greenspace</option>
-                <option value="1">Bonaly Country Park</option>
-                <option value="2">Burdiehouse Burn Valley Park</option>
-                <option value="3">Cammo Park</option>
-                <option value="4">Colinton and Craiglockhart Dells</option>
-                <option value="5">Corstophine Hill Local Nature Reserve</option>
-                <option value="6">Craigmillar Castle Park</option>
-                <option value="7">Hermitage of Braid and Blackford Hill Local Nature Reserve</option>
-                <option value="8">Holyrood Park</option>
-                <option value="9">Hunter's Hall Public Park</option>
-                <option value="10">Inverleith Park</option>
-                <option value="11">Royal Botanic Garden and Arboretum</option>
-              </select><p></p>
-              <button type="button" onclick="route(option.value)" class="w3-btn w3-teal">Route</button><p></p>
+  <div data-title="Welcome!🤗" data-intro="Here you can interact yourself with our map and data! Please spend a few time to follow our user guide journey...(Press ENTER to go to the next step more quickly)" class="card-demo">
+    <div class="container" style="max-width:100%">
+      <div class="row d-flex">
+        <div class="col-sm-2" style="margin-top: 20px; overflow: auto; height: 85vh;">
+          <div data-intro="You can get the directions to one of the assessible greenspaces larger than 20 heatares by: 1️⃣opening this tag 2️⃣choosing the target greenspace 3️⃣clicking 'Route'!" class="card-demo">
+            <button onclick="accordion('routing')" class="w3-button w3-block w3-left-align">
+              <b>Routing to Greenspace</b>
+            </button>
+            <div id="routing" class="w3-container w3-hide">
+              <p>Go to greenspaces to relax yourself after classes!</p>
+              <form class="w3-container">
+                <select class="w3-select w3-border" name="option">
+                  <option value="" disabled selected>Desternation Greenspace</option>
+                  <option value="1">Bonaly Country Park</option>
+                  <option value="2">Burdiehouse Burn Valley Park</option>
+                  <option value="3">Cammo Park</option>
+                  <option value="4">Colinton and Craiglockhart Dells</option>
+                  <option value="5">Corstophine Hill Local Nature Reserve</option>
+                  <option value="6">Craigmillar Castle Park</option>
+                  <option value="7">Hermitage of Braid and Blackford Hill Local Nature Reserve</option>
+                  <option value="8">Holyrood Park</option>
+                  <option value="9">Hunter's Hall Public Park</option>
+                  <option value="10">Inverleith Park</option>
+                  <option value="11">Royal Botanic Garden and Arboretum</option>
+                </select><p></p>
+                <button type="button" onclick="route(option.value)" class="w3-btn w3-teal">Route</button><p></p>
               </form>
+            </div>
           </div>
-        <button onclick="accordion('layer')" class="w3-button w3-block w3-left-align">
-          <b>Special Layer Control</b></button>
-          <div id="layer" class="w3-container w3-hide">
-            <details>
-              <summary>Proposed Greenspace</summary>
-              <div class="w3-display-container">
-                <img src="pictures/woodland.jpg" class="w3-hover-opacity" alt="Woodland!!!" onclick="turnonwoodland()">
-                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Woodland</div>
-              </div>
-              <div style="margin-top:10px" class="w3-display-container">
-                <img src="pictures/meadow.jpg" class="w3-hover-opacity" alt="Meadow" onclick="turnonmeadow()")>
-                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Meadow</div>
-              </div>
-              <div style="margin-top:10px" class="w3-display-container">
-                <img src="pictures/willow.jpeg" class="w3-hover-opacity" alt="Livingwillow" onclick="turnonwillow()">
-                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Livingwillow</div>
-              </div>
-              <div style="margin-top:10px" class="w3-display-container">
-                <img src="pictures/bush.jpg" class="w3-hover-opacity" alt="Bush" onclick="turnonbush()")>
-                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Bush</div>
-              </div>
-              <div style="margin-top:10px" class="w3-display-container">
-                <img src="pictures/largewood.jpg" class="w3-hover-opacity" alt="Large Wood" onclick="turnonlargewood()")>
-                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Large Wood</div>
-              </div>
-            </details>
-            <details>
-              <summary>River Management</summary>
-              <div class="w3-display-container">
-                <img src="pictures/dam.JPG" class="w3-hover-opacity" alt="dam" onclick="turnondam()">
-                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Dam</div>
-              </div>
-              <div style="margin-top:10px" class="w3-display-container">
-                <img src="pictures/barrier.jpeg" class="w3-hover-opacity" alt="Barrier" onclick="turnonbarrier()")>
-                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Barrier</div>
-              </div>
-              <div style="margin-top:10px" class="w3-display-container">
-                <img src="pictures/floodgate.jpg" class="w3-hover-opacity" alt="Flood Gate" onclick="turnongate()")>
-                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Flood Gate</div>
-              </div>
-              <div style="margin-top:10px" class="w3-display-container">
-                <img src="pictures/culvert.jpg" class="w3-hover-opacity" alt="Culvert" onclick="turnonculvert()")>
-                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Culvert</div>
-              </div>
-              <div style="margin-top:10px" class="w3-display-container">
-                <img src="pictures/embankment.jpg" class="w3-hover-opacity" alt="Embankment" onclick="turnonembank()")>
-                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Embankment</div>
-              </div>
-              <div style="margin-top:10px" class="w3-display-container">
-                <img src="pictures/wall.jpeg" class="w3-hover-opacity" alt="Flood Wall" onclick="turnonwall()")>
-                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Flood Wall</div>
-              </div>
-            </details>  
+          <div data-intro="Some special layers including the existing river management methods and our proposal for flooding can be separately turned on and off here." class="card-demo">
+            <button onclick="accordion('layer')" class="w3-button w3-block w3-left-align">
+              <b>Special Layer Control</b>
+            </button>
+            <div id="layer" class="w3-container w3-hide">
+              <details>
+                <summary>River Management</summary>
+                <div class="w3-display-container">
+                  <img src="pictures/dam.JPG" class="w3-hover-opacity" alt="dam" onclick="turnondam()">
+                  <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Dam</div>
+                </div>
+                <div style="margin-top:10px" class="w3-display-container">
+                  <img src="pictures/barrier.jpeg" class="w3-hover-opacity" alt="Barrier" onclick="turnonbarrier()")>
+                  <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Barrier</div>
+                </div>
+                <div style="margin-top:10px" class="w3-display-container">
+                  <img src="pictures/floodgate.jpg" class="w3-hover-opacity" alt="Flood Gate" onclick="turnongate()")>
+                  <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Flood Gate</div>
+                </div>
+                <div style="margin-top:10px" class="w3-display-container">
+                  <img src="pictures/culvert.jpg" class="w3-hover-opacity" alt="Culvert" onclick="turnonculvert()")>
+                  <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Culvert</div>
+                </div>
+                <div style="margin-top:10px" class="w3-display-container">
+                  <img src="pictures/defences.jpg" class="w3-hover-opacity" alt="Defences" onclick="turnondefence()")>
+                  <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Embankment<p><br><br><br><br></p>Flood Wall</div>
+                </div>
+              </details>
+              <details>
+                <summary>Proposed Greenspace</summary>
+                <div class="w3-display-container">
+                  <img src="pictures/woodland.jpg" class="w3-hover-opacity" alt="Woodland!!!" onclick="turnonwoodland()">
+                  <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Woodland</div>
+                </div>
+                <div style="margin-top:10px" class="w3-display-container">
+                  <img src="pictures/meadow.jpg" class="w3-hover-opacity" alt="Meadow" onclick="turnonmeadow()")>
+                  <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Meadow</div>
+                </div>
+                <div style="margin-top:10px" class="w3-display-container">
+                  <img src="pictures/willow.jpeg" class="w3-hover-opacity" alt="Livingwillow" onclick="turnonwillow()">
+                  <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Livingwillow</div>
+                </div>
+                <div style="margin-top:10px" class="w3-display-container">
+                  <img src="pictures/bush.jpg" class="w3-hover-opacity" alt="Bush" onclick="turnonbush()")>
+                  <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Bush</div>
+                </div>
+                <div style="margin-top:10px" class="w3-display-container">
+                  <img src="pictures/largewood.jpg" class="w3-hover-opacity" alt="Large Wood" onclick="turnonlargewood()")>
+                  <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Large Wood</div>
+                </div>
+              </details>
+            </div>
           </div>
-          <button onclick="accordion('oracle')" class="w3-button w3-block w3-left-align">
-            <b>Quries</b></button>
+          <div data-intro="You can perform queries by accessing our Oracle database here." class="card-demo">
+            <button onclick="accordion('oracle')" class="w3-button w3-block w3-left-align">
+              <b>Quries</b>
+            </button>
             <div id="oracle" class="w3-container w3-hide">
               <p>Coming soon...</p>
             </div>
+          </div>
+        </div>
+        <div style="height: 89vh" id="mapid" class="col-10">
+          <div style="height: 89vh" data-title="Map & Data🗺️" data-intro="Ta-da!! All data will be presented here! You can also use the layer control inside the map on the up right coner to explore more. Enjoy😊!" class="card-demo"></div>
+        </div>  
       </div>
-      <div class="col-10" style="height: 89vh" id="mapid"></div><br>
     </div>
   </div>
   <!-- Footer -->
@@ -491,20 +503,12 @@
       geojson9.addTo(map);
     }
   };
-  // sublayer control - embankment
-  function turnonembank() {
+  // sublayer control - defences
+  function turnondefence() {
     if (map.hasLayer(geojson8)){
       geojson8.remove();
     } else {
       geojson8.addTo(map);
-    }
-  };
-  // sublayer control - flood wall
-  function turnonwall() {
-    if (map.hasLayer(largewood)){
-      largewood.remove();
-    } else {
-      largewood.addTo(map);
     }
   };
   // polygon and line layers creation relative function
@@ -616,6 +620,9 @@
     }
   };
 
+  // Start Page Guide
+  introJs().start();
+
   // Leaflet scripts
   var graymap = L.tileLayer(
     'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
@@ -632,7 +639,7 @@
     }
   );
   //var map = L.map('mapid',{center:[55.9164043, -3.3070006], zoom:17, layers: graymap});
-  var map = L.map('mapid',{center:[55.92, -3.285], zoom:10.5, layers: graymap});
+  var map = L.map('mapid',{center:[55.913, -3.285], zoom:10.5, layers: graymap});
   // Scale and zoom viewer
   var scale = L.control.scale().addTo(map);
   const ZoomViewer = L.Control.extend({
