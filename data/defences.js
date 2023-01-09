@@ -56,7 +56,7 @@ var defence ={
       "properties" : {
         "FID" : 0,
         "Id" : 0,
-        "defences" : "Wall"
+        "defences" : "Flood Wall"
       }
     },
     {
@@ -86,7 +86,7 @@ var defence ={
       "properties" : {
         "FID" : 1,
         "Id" : 0,
-        "defences" : "Wall"
+        "defences" : "Flood Wall"
       }
     },
     {
@@ -108,7 +108,7 @@ var defence ={
       "properties" : {
         "FID" : 2,
         "Id" : 0,
-        "defences" : "Gate"
+        "defences" : "Flood Gate"
       }
     },
     {
@@ -130,7 +130,7 @@ var defence ={
       "properties" : {
         "FID" : 3,
         "Id" : 0,
-        "defences" : "Gate"
+        "defences" : "Flood Gate"
       }
     },
     {
@@ -152,7 +152,7 @@ var defence ={
       "properties" : {
         "FID" : 4,
         "Id" : 0,
-        "defences" : "Gate"
+        "defences" : "Flood Gate"
       }
     },
     {
@@ -174,7 +174,7 @@ var defence ={
       "properties" : {
         "FID" : 5,
         "Id" : 0,
-        "defences" : "Gate"
+        "defences" : "Flood Gate"
       }
     },
     {
@@ -596,7 +596,7 @@ var defence ={
       "properties" : {
         "FID" : 22,
         "Id" : 0,
-        "defences" : "Wall"
+        "defences" : "Flood Wall"
       }
     },
     {
@@ -618,7 +618,7 @@ var defence ={
       "properties" : {
         "FID" : 23,
         "Id" : 0,
-        "defences" : "Wall"
+        "defences" : "Flood Wall"
       }
     },
     {
@@ -640,7 +640,7 @@ var defence ={
       "properties" : {
         "FID" : 24,
         "Id" : 0,
-        "defences" : "Wall"
+        "defences" : "Flood Wall"
       }
     },
     {
@@ -662,7 +662,7 @@ var defence ={
       "properties" : {
         "FID" : 25,
         "Id" : 0,
-        "defences" : "Wall"
+        "defences" : "Flood Wall"
       }
     },
     {
@@ -696,7 +696,7 @@ var defence ={
       "properties" : {
         "FID" : 26,
         "Id" : 0,
-        "defences" : "Wall"
+        "defences" : "Flood Wall"
       }
     },
     {
@@ -750,7 +750,7 @@ var defence ={
       "properties" : {
         "FID" : 27,
         "Id" : 0,
-        "defences" : "Wall"
+        "defences" : "Flood Wall"
       }
     },
     {
@@ -776,7 +776,7 @@ var defence ={
       "properties" : {
         "FID" : 28,
         "Id" : 0,
-        "defences" : "Wall"
+        "defences" : "Flood Wall"
       }
     },
     {
@@ -798,7 +798,7 @@ var defence ={
       "properties" : {
         "FID" : 29,
         "Id" : 0,
-        "defences" : "Wall"
+        "defences" : "Flood Wall"
       }
     },
     {
@@ -824,7 +824,7 @@ var defence ={
       "properties" : {
         "FID" : 30,
         "Id" : 0,
-        "defences" : "Wall"
+        "defences" : "Flood Wall"
       }
     },
     {
@@ -862,7 +862,7 @@ var defence ={
       "properties" : {
         "FID" : 31,
         "Id" : 0,
-        "defences" : "Wall"
+        "defences" : "Flood Wall"
       }
     },
     {
@@ -884,7 +884,7 @@ var defence ={
       "properties" : {
         "FID" : 32,
         "Id" : 0,
-        "defences" : "Wall"
+        "defences" : "Flood Wall"
       }
     }
   ]
