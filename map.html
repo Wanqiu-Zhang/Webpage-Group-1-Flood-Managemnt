@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,  initial-scale=1">
   <title>CGS Flood Management </title>
-  <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/style.css">
   <!-- W3CSS -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <!-- Container -->
@@ -37,12 +37,13 @@
 </head>
 
 <body>
-  <div class="topnav">
-    <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/index.html">Home</a>
-    <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/find.html">Findings</a>
-    <a class="active" href="map.html">Interactive Map</a>
-    <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/info.html">Further Information</a>
-    <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/team.html">Team</a>
+  <!-- Navbar -->
+  <div class="topnav sticky-top" style="margin-bottom: 0px;">
+    <a href="index.html">Home</a>
+    <a href="find.html">Report</a>
+    <a class="active" href="map.html">Visualisation</a>
+    <a href="info.html">Other Research</a>
+    <a href="team.html">About us</a>
   </div>
   <div class="container" style="max-width:100%">
     <div class="row d-flex">
@@ -98,11 +99,27 @@
             <details>
               <summary>River Management</summary>
               <div class="w3-display-container">
-                <img src="pictures/dam.JPG" class="w3-hover-opacity" alt="dam" onclick="turnonwoodland()">
+                <img src="pictures/dam.JPG" class="w3-hover-opacity" alt="dam" onclick="turnondam()">
                 <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Dam</div>
               </div>
               <div style="margin-top:10px" class="w3-display-container">
-                <img src="pictures/wall.jpeg" class="w3-hover-opacity" alt="Flood Wall" onclick="turnonmeadow()")>
+                <img src="pictures/barrier.jpeg" class="w3-hover-opacity" alt="Barrier" onclick="turnonbarrier()")>
+                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Barrier</div>
+              </div>
+              <div style="margin-top:10px" class="w3-display-container">
+                <img src="pictures/floodgate.jpg" class="w3-hover-opacity" alt="Flood Gate" onclick="turnongate()")>
+                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Flood Gate</div>
+              </div>
+              <div style="margin-top:10px" class="w3-display-container">
+                <img src="pictures/culvert.jpg" class="w3-hover-opacity" alt="Culvert" onclick="turnonculvert()")>
+                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Culvert</div>
+              </div>
+              <div style="margin-top:10px" class="w3-display-container">
+                <img src="pictures/embankment.jpg" class="w3-hover-opacity" alt="Embankment" onclick="turnonembank()")>
+                <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Embankment</div>
+              </div>
+              <div style="margin-top:10px" class="w3-display-container">
+                <img src="pictures/wall.jpeg" class="w3-hover-opacity" alt="Flood Wall" onclick="turnonwall()")>
                 <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Flood Wall</div>
               </div>
             </details>  
@@ -113,11 +130,19 @@
               <p>Coming soon...</p>
             </div>
       </div>
-      <div class="col-10" style="height: 85vh;" id="mapid"></div><br>
+      <div class="col-10" style="height: 89vh" id="mapid"></div><br>
     </div>
   </div>
-  <footer class="fixed-bottom center">
-    <p>© 2022 University of Edinburgh</p>
+  <!-- Footer -->
+  <footer > 
+    <div class="title">
+      <h6>The University of Edinburgh</h6>
+    </div>
+    <div class="copyright">
+      <p>
+        Unless explicitly stated, all material is copyright © University of Edinburgh 2023.
+      </p>
+    </div>
   </footer>
 </body>
 
@@ -432,6 +457,56 @@
       largewood.addTo(map);
     }
   };
+  // sublayer control - dam
+  function turnondam() {
+    if (map.hasLayer(Dam)){
+      Dam.remove();
+    } else {
+      Dam.addTo(map);
+    }
+  };
+  // sublayer control - barrier
+  function turnonbarrier() {
+    if ((map.hasLayer(BigBarrier)) || (map.hasLayer(SmallBarrier))){
+      BigBarrier.remove();
+      SmallBarrier.remove();
+    } else {
+      BigBarrier.addTo(map);
+      SmallBarrier.addTo(map);
+    }
+  };
+  // sublayer control - flood gate
+  function turnongate() {
+    if (map.hasLayer(Gate)){
+      Gate.remove();
+    } else {
+      Gate.addTo(map);
+    }
+  };
+  // sublayer control - culvert
+  function turnonculvert() {
+    if (map.hasLayer(geojson9)){
+      geojson9.remove();
+    } else {
+      geojson9.addTo(map);
+    }
+  };
+  // sublayer control - embankment
+  function turnonembank() {
+    if (map.hasLayer(geojson8)){
+      geojson8.remove();
+    } else {
+      geojson8.addTo(map);
+    }
+  };
+  // sublayer control - flood wall
+  function turnonwall() {
+    if (map.hasLayer(largewood)){
+      largewood.remove();
+    } else {
+      largewood.addTo(map);
+    }
+  };
   // polygon and line layers creation relative function
   function onEachFeature(feature, layer) {
     if (feature.properties && feature.properties.Type) {
@@ -700,7 +775,7 @@
   var geojson9 = L.geoJson(Culvert, {
     style: style7,
   });
-  var wall = L.geoJSON(line,{
+  var prowall = L.geoJSON(line,{
     onEachFeature: onEachFeature,
     filter: function(line, layer) {
       return line.properties.Type == 'Flood Wall';
@@ -808,12 +883,13 @@
   var MediumRiskFlooding = L.layerGroup([geojson6, geojson14]);
   var Flooding = L.layerGroup([geojson11, geojson14]).addTo(map);
   var Greenspaces = L.layerGroup([geojson1, geojson14]);
-  var proposal = L.layerGroup([bush, largewood, willow, meadow, river, woodland, wall, path, bench, entrance, maps, tree]);
+  var proposal = L.layerGroup([bush, largewood, willow, meadow, river, woodland, prowall, path, bench, entrance, maps, tree]);
   var baseMaps = {"CartoDB Positron": graymap, "OpenStreetMap": osm};
-  var overlayMaps = {"Proposal": proposal, "River Management": RiverManagement, "Medium Flood In Edinburgh": Flooding, "People Affected By Medium Flood": MediumRiskFlooding, "Accessible Greenspace": Greenspaces};
+  var overlayMaps = {"Medium Flood In Edinburgh": Flooding, "People Affected By Medium Flood": MediumRiskFlooding, "River Management": RiverManagement, "Accessible Greenspace": Greenspaces};
   var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
   layerControl.addOverlay(geojson2, 'Environment Deprivation');
   layerControl.addOverlay(geojson3, 'Scottish Index of Multiple Deprivation');
+  layerControl.addOverlay(proposal, 'Proposal');
   layerControl.addOverlay(geojson14, 'Edinburgh City');
   // Legends
   //Accessible Greenspaces

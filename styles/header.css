@@ -1,0 +1,36 @@
+
+header div.logo{
+    padding: 15px 30px;
+    background-color: var(--white);
+}
+
+header div.logo img{
+    height: 50px;
+}
+
+/*jumbotron*/
+header div.jumbotron-image {
+    background-position: center center;
+    background-repeat:no-repeat;
+    background-size: cover;
+    border-radius: 0;
+
+    margin-bottom: 0px;
+    background-image: url('../images/header2.jpg');
+    height: 30vh;
+}
+
+header div.title{
+    padding: 15px 30px;
+    background-color: var(--accent);
+}
+
+header div.title h1{
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--white);
+    text-align: left;
+    margin: 0px;
+}
