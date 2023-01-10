@@ -40,15 +40,15 @@
 </head>
 
 <body>
-  <!-- Navbar -->
-  <div class="topnav sticky-top" style="margin-bottom: 0px;">
-    <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/index.html">Home</a>
-    <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/find.html">Report</a>
-    <a class="active" href="map.html">Visualisation</a>
-    <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/info.html">Other Research</a>
-    <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/team.html">About us</a>
-  </div>
   <div data-title="Welcome!🤗" data-intro="Here you can interact yourself with our map and data! Please spend a few time to follow our user guide journey...(Press ENTER to go to the next step more quickly)" class="card-demo">
+      <!-- Navbar -->
+    <div class="topnav sticky-top" style="margin-bottom: 0px;">
+      <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/index.html">Home</a>
+      <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/find.html">Report</a>
+      <a class="active" href="map.html">Visualisation</a>
+      <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/info.html">Other Research</a>
+      <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/team.html">About us</a>
+    </div>
     <div class="container" style="max-width:100%">
       <div class="row d-flex">
         <div class="col-sm-2" style="margin-top: 20px; overflow: auto; height: 85vh;">
@@ -144,18 +144,18 @@
         </div>  
       </div>
     </div>
+    <!-- Footer -->
+    <footer > 
+      <div class="title">
+        <h6>The University of Edinburgh</h6>
+      </div>
+      <div class="copyright">
+        <p>
+          Unless explicitly stated, all material is copyright © University of Edinburgh 2023.
+        </p>
+      </div>
+    </footer>
   </div>
-  <!-- Footer -->
-  <footer > 
-    <div class="title">
-      <h6>The University of Edinburgh</h6>
-    </div>
-    <div class="copyright">
-      <p>
-        Unless explicitly stated, all material is copyright © University of Edinburgh 2023.
-      </p>
-    </div>
-  </footer>
 </body>
 
 <script language = "JavaScript">
@@ -627,19 +627,18 @@
   var graymap = L.tileLayer(
     'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
       maxZoom: 19, 
-      minZoom: 12, 
+      minZoom: 10, 
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
     }
   );
   var osm = L.tileLayer(
     'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19, 
-      minZoom: 12, 
+      minZoom: 10, 
       attribution: '&copy; <a href="http://osm.orgcopyright">OpenStreetMap</a> contributors'
     }
   );
-  //var map = L.map('mapid',{center:[55.9164043, -3.3070006], zoom:17, layers: graymap});
-  var map = L.map('mapid',{center:[55.913, -3.285], zoom:10.5, layers: graymap});
+  var map = L.map('mapid',{center:[55.913, -3.285], zoom:11, layers: graymap});
   // Scale and zoom viewer
   var scale = L.control.scale().addTo(map);
   const ZoomViewer = L.Control.extend({
@@ -873,7 +872,7 @@
     return this._div;
   };
   info2.update = function (props) {
-    this._div.innerHTML = '<h4>Environment Deprivation</h4>' + (props ? '<b>' + props.Name + '</b><br />' + props.GreenAreaPerPerson + ' m<sup>2</sup>': 'Hover over');
+    this._div.innerHTML = '<h4>Environment Deprivation - Area of Greenspace</h4>' + (props ? '<b>' + props.Name + '</b><br />' + props.GreenAreaPerPerson + ' m<sup>2</sup>': 'Hover over');
   };
   //information for mouse over SIMD Rank
   var info3 = L.control();
@@ -898,6 +897,11 @@
   layerControl.addOverlay(geojson3, 'Scottish Index of Multiple Deprivation');
   layerControl.addOverlay(proposal, 'Proposal');
   layerControl.addOverlay(geojson14, 'Edinburgh City');
+  map.on('overlayadd', function(eo) {
+    if (eo.name === 'Proposal'){
+        map.setView(L.latLng(55.9164043, -3.3070006), 17)
+    }
+  });
   // Legends
   //Accessible Greenspaces
   var legend1 = L.control({ position: 'bottomright' });
@@ -1074,6 +1078,18 @@ map.on('overlayadd', function (eventLayer) {
     this.removeControl(info3);
     legend4.addTo(map);
   }
+  else if (eventLayer.name == 'Proposal') {  
+    this.removeControl(legend1);  
+    this.removeControl(legend2);  
+    this.removeControl(legend3);
+    this.removeControl(legend4);  
+    this.removeControl(legend5);  
+    this.removeControl(legend6);  
+    this.removeControl(legend7);  
+    this.removeControl(legend8);  
+    this.removeControl(info2);  
+    this.removeControl(info3);  
+ } 
 });
 </script>
 </html>
