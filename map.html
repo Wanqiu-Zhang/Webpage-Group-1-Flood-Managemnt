@@ -41,7 +41,7 @@
 
 <body>
   <div data-title="Welcome!🤗" data-intro="Here you can interact yourself with our map and data! Please spend a few time to follow our user guide journey...(Press ENTER to go to the next step more quickly)" class="card-demo">
-      <!-- Navbar -->
+    <!-- Navbar -->
     <div class="topnav sticky-top" style="margin-bottom: 0px;">
       <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/index.html">Home</a>
       <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/find.html">Report</a>
@@ -49,10 +49,14 @@
       <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/info.html">Other Research</a>
       <a href="https://www.geos.ed.ac.uk/~s2412750/cgs_flood/team.html">About us</a>
     </div>
+    <!-- Main contents -->
     <div class="container" style="max-width:100%">
       <div class="row d-flex">
+        <!-- Left side function bar -->
         <div class="col-sm-2" style="margin-top: 20px; overflow: auto; height: 85vh;">
+          <!-- Page Guide -->
           <div data-intro="You can get the directions to one of the assessible greenspaces larger than 20 heatares by: 1️⃣opening this tag 2️⃣choosing the target greenspace 3️⃣clicking 'Route'!" class="card-demo">
+            <!-- Navigating function -->
             <button onclick="accordion('routing')" class="w3-button w3-block w3-left-align">
               <b>Routing to Greenspace</b>
             </button>
@@ -77,7 +81,9 @@
               </form>
             </div>
           </div>
+          <!-- Page Guide -->
           <div data-intro="Some special layers including the existing river management methods and our proposal for flooding can be separately turned on and off here." class="card-demo">
+            <!-- Layer control outside the map -->
             <button onclick="accordion('layer')" class="w3-button w3-block w3-left-align">
               <b>Special Layer Control</b>
             </button>
@@ -85,51 +91,53 @@
               <details>
                 <summary>River Management</summary>
                 <div class="w3-display-container">
-                  <img src="pictures/dam.JPG" class="w3-hover-opacity" alt="dam" onclick="turnondam()">
+                  <img src="images/dam2.jpg" class="w3-hover-opacity" alt="dam" onclick="turnondam()">
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Dam</div>
                 </div>
                 <div style="margin-top:10px" class="w3-display-container">
-                  <img src="pictures/barrier.jpeg" class="w3-hover-opacity" alt="Barrier" onclick="turnonbarrier()")>
+                  <img src="images/barrier.jpeg" class="w3-hover-opacity" alt="Barrier" onclick="turnonbarrier()")>
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Barrier</div>
                 </div>
                 <div style="margin-top:10px" class="w3-display-container">
-                  <img src="pictures/floodgate.jpg" class="w3-hover-opacity" alt="Flood Gate" onclick="turnongate()")>
+                  <img src="images/floodgate.jpg" class="w3-hover-opacity" alt="Flood Gate" onclick="turnongate()")>
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Flood Gate</div>
                 </div>
                 <div style="margin-top:10px" class="w3-display-container">
-                  <img src="pictures/culvert.jpg" class="w3-hover-opacity" alt="Culvert" onclick="turnonculvert()")>
+                  <img src="images/culvert.jpg" class="w3-hover-opacity" alt="Culvert" onclick="turnonculvert()")>
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Culvert</div>
                 </div>
                 <div style="margin-top:10px" class="w3-display-container">
-                  <img src="pictures/defences.jpg" class="w3-hover-opacity" alt="Defences" onclick="turnondefence()")>
+                  <img src="images/defences.jpg" class="w3-hover-opacity" alt="Defences" onclick="turnondefence()")>
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Embankment<p><br><br><br><br></p>Flood Wall</div>
                 </div>
               </details>
               <details>
                 <summary>Proposed Greenspace</summary>
                 <div class="w3-display-container">
-                  <img src="pictures/woodland.jpg" class="w3-hover-opacity" alt="Woodland!!!" onclick="turnonwoodland()">
+                  <img src="images/woodland.jpg" class="w3-hover-opacity" alt="Woodland!!!" onclick="turnonwoodland()">
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Woodland</div>
                 </div>
                 <div style="margin-top:10px" class="w3-display-container">
-                  <img src="pictures/meadow.jpg" class="w3-hover-opacity" alt="Meadow" onclick="turnonmeadow()")>
+                  <img src="images/meadow.jpg" class="w3-hover-opacity" alt="Meadow" onclick="turnonmeadow()")>
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Meadow</div>
                 </div>
                 <div style="margin-top:10px" class="w3-display-container">
-                  <img src="pictures/willow.jpeg" class="w3-hover-opacity" alt="Livingwillow" onclick="turnonwillow()">
+                  <img src="images/willow.jpeg" class="w3-hover-opacity" alt="Livingwillow" onclick="turnonwillow()">
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Livingwillow</div>
                 </div>
                 <div style="margin-top:10px" class="w3-display-container">
-                  <img src="pictures/bush.jpg" class="w3-hover-opacity" alt="Bush" onclick="turnonbush()")>
+                  <img src="images/bush.jpg" class="w3-hover-opacity" alt="Bush" onclick="turnonbush()")>
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Bush</div>
                 </div>
                 <div style="margin-top:10px" class="w3-display-container">
-                  <img src="pictures/largewood.jpg" class="w3-hover-opacity" alt="Large Wood" onclick="turnonlargewood()")>
+                  <img src="images/largewood.jpg" class="w3-hover-opacity" alt="Large Wood" onclick="turnonlargewood()")>
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Large Wood</div>
                 </div>
               </details>
             </div>
           </div>
+          <!-- Unfinished Quieries Function -->
+          <!--
           <div data-intro="You can perform queries by accessing our Oracle database here." class="card-demo">
             <button onclick="accordion('oracle')" class="w3-button w3-block w3-left-align">
               <b>Quries</b>
@@ -138,8 +146,11 @@
               <p>Coming soon...</p>
             </div>
           </div>
+          -->
         </div>
+        <!-- Map -->
         <div style="height: 89vh" id="mapid" class="col-10">
+          <!-- Page Guide -->
           <div style="height: 89vh" data-title="Map & Data🗺️" data-intro="Ta-da!! All data will be presented here! You can also use the layer control inside the map on the up right coner to explore more. Enjoy😊!" class="card-demo"></div>
         </div>  
       </div>
@@ -517,7 +528,7 @@
         layer.bindPopup(feature.properties.Type);
     }
   };
-  // left side tags control
+  // left side bar control
   function accordion(id) {
     var x = document.getElementById(id);
     if (x.className.indexOf("w3-show") == -1) {
@@ -624,6 +635,7 @@
   introJs().start();
 
   // Leaflet scripts
+  // Base Maps
   var graymap = L.tileLayer(
     'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
       maxZoom: 19, 
@@ -656,44 +668,44 @@
   const zoomViewer = (new ZoomViewer()).addTo(map);
   // Setting point icons
   var DamIcon = L.icon({
-    iconUrl: 'icons/Dam.png',
+    iconUrl: 'images/icons/Dam.png',
     iconSize: [50.7, 45.4],
     iconAnchor: [12.4, 10.4],
   });
   var BigBarrierIcon = L.icon({
-    iconUrl: 'icons/BigBarrier.png',
+    iconUrl: 'images/icons/BigBarrier.png',
     iconSize: [50.7, 45.4],
     iconAnchor: [12.4, 10.4],
   });
   var SmallBarrierIcon = L.icon({
-    iconUrl: 'icons/SmallBarrier.png',
+    iconUrl: 'images/icons/SmallBarrier.png',
     iconSize: [50.7, 45.4],
     iconAnchor: [12.4, 10.4],
   });
   var GateIcon = L.icon({
-    iconUrl: 'icons/Gate.png',
+    iconUrl: 'images/icons/Gate.png',
     iconSize: [48.7, 32.4],
     iconAnchor: [12.4, 10.4],
   });
   var benchicon = L.icon({
-    iconUrl: 'icons/bench.png',
+    iconUrl: 'images/icons/bench.png',
     iconSize: [22.5, 10],
     iconAnchor: [11.1, 4.8],
     popupAnchor: [-3, -3]
   });
   var entranceicon = L.icon({
-    iconUrl: 'icons/entrance.png',
+    iconUrl: 'images/icons/entrance.png',
     iconSize: [21.9, 24.5],
     iconAnchor: [12.2, 11.8],
     popupAnchor: [0, 0]
   });
   var mapicon = L.icon({
-    iconUrl: 'icons/map.png',
+    iconUrl: 'images/icons/map.png',
     iconSize: [40, 30.6],
     iconAnchor: [19.5, 15],
   });
   var treeicon = L.icon({
-    iconUrl: 'icons/tree.png',
+    iconUrl: 'images/icons/tree.png',
     iconSize: [32.7, 30.4],
     iconAnchor: [12.4, 10.4],
   });
@@ -734,42 +746,42 @@
     filter: function(poly, layer) {
       return poly.properties.Type == 'Bush';
     },
-    style: {stroke: false, fill: 'url(icons/bush.png)', fillOpacity:'1.0'}
+    style: {stroke: false, fill: 'url(images/icons/bush.png)', fillOpacity:'1.0'}
   });
   var largewood = L.geoJSON(polygon,{
     onEachFeature: onEachFeature,
     filter: function(poly, layer) {
       return poly.properties.Type == 'Large Wood';
     },
-    style: {stroke: false, fill: 'url(icons/largewood.png)', fillOpacity:'1.0'}
+    style: {stroke: false, fill: 'url(images/icons/largewood.png)', fillOpacity:'1.0'}
   });
   var willow = L.geoJSON(polygon,{
     onEachFeature: onEachFeature,
     filter: function(poly, layer) {
       return poly.properties.Type == 'Livewillow';
     },
-    style: {stroke: false, fill: 'url(icons/willow.png)', fillOpacity:'1.0'}
+    style: {stroke: false, fill: 'url(images/icons/willow.png)', fillOpacity:'1.0'}
   });
   var meadow = L.geoJSON(polygon,{
     onEachFeature: onEachFeature,
     filter: function(poly, layer) {
       return poly.properties.Type == 'Meadow';
     },
-    style: {stroke: false, fill: 'url(icons/meadow.png)', fillOpacity:'1.0'}
+    style: {stroke: false, fill: 'url(images/icons/meadow.png)', fillOpacity:'1.0'}
   });
   var river = L.geoJSON(polygon,{
     onEachFeature: onEachFeature,
     filter: function(poly, layer) {
       return poly.properties.Type == 'River';
     },
-    style: {stroke: false, fill: 'url(icons/river.png)', fillOpacity:'1.0'}
+    style: {stroke: false, fill: 'url(images/icons/river.png)', fillOpacity:'1.0'}
   });
   var woodland = L.geoJSON(polygon,{
     onEachFeature: onEachFeature,
     filter: function(poly, layer) {
       return poly.properties.Type == 'Woodland';
     },
-    style: {stroke: false, fill: 'url(icons/woodland.png)', fillOpacity:'1.0'}
+    style: {stroke: false, fill: 'url(images/icons/woodland.png)', fillOpacity:'1.0'}
   });
   // Create line layers
   var geojson5 = L.geoJson(River, {
