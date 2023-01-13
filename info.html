@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>CGS Flood Management </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="styles/main.css">
 </head>
@@ -25,7 +25,7 @@
   </header>
   
   <!-- Navbar -->
-  <div class="topnav">
+  <div class="topnav sticky-top">
     <a  href="index.html">Home</a>
     <a  href="find.html">Report</a>
     <a href="https://www.geos.ed.ac.uk/~s2312383/Webpage-Group-1-Flood-Managemnt/map.html">Visualisation</a>
@@ -36,46 +36,46 @@
   <!-- Main body -->
   <div id="main">
     <!-- Cards -->
-    <div class="cardContainer">
-      <div class="card2">
-        <h5><a href="error.html">Carbon Sink <i class="fa-solid fa-circle-info"></i></a></h5>
+    <div class="cardContainerBig">
+      <div class="card card300">
+        <h5><a href="error.html">Value in terms of a Carbon Sink <i class="fa-solid fa-circle-info"></i></a></h5>
         <img class="full" src="./images/otherg/carbon.jpg" alt="carbon sink">
-        <p class="info"> Find out how Green Spaces in Edinburgh are used to capture carbon</p>
+        <p class="info"> How effectively do green spaces capture carbon across the city?</p>
       </div>
 
-      <div class="card2">
-        <h5><a href="error.html">Ecological Value <i class="fa-solid fa-circle-info"></i></a></h5>
+      <div class="card card300">
+        <h5><a href="error.html">Ecological Significance <i class="fa-solid fa-circle-info"></i></a></h5>
         <img class="full" src="./images/otherg/eco.jpg" alt="ecological value">
-        <p class="info"> Distribution of Green Spaces in Edinburgh high in ecological value.</p>
+        <p class="info"> Study of the ecological value of greenspaces across the city and rewildering efforts.</p>
       </div>
       
-      <div class="card2">
-        <h5><a href="error.html">Cultural Value <i class="fa-solid fa-circle-info"></i></a></h5>
+      <div class="card card300">
+        <h5><a href="error.html">Cultural and Historical Value <i class="fa-solid fa-circle-info"></i></a></h5>
         <img class="full" src="./images/otherg/cut.jpg" alt="cultural value">
-        <p class="info"> Find out about exciting cultura walks around Edinburgh Green Spaces.</p>
+        <p class="info"> Find out about exciting cultural walks around Edinburgh.</p>
       </div>
       
-      <div class="card2">
+      <div class="card card300">
         <h5><a href="error.html">Commercial Value <i class="fa-solid fa-circle-info"></i></a></h5>
         <img class="full" src="./images/otherg/commercial.jpg" alt="commercial value">
-        <p class="info"> Are businesses benefitting from Green Spaces evenly across Edinburgh.</p>
+        <p class="info"> Comparative study of business sales and property prices surrounding greenspaces.</p>
       </div>
       
-      <div class="card2">
-        <h5><a href="error.html">Pollution Reduction <i class="fa-solid fa-circle-info"></i></a></h5>
+      <div class="card card300">
+        <h5><a href="https://www.geos.ed.ac.uk/~s2288848/cgsp/Quiter/" target="_blank">Reducing Pollution <i class="fa-solid fa-circle-info"></i></a></h5>
         <img class="full" src="./images/otherg/pollution.jpg" alt="pollution reductionk">
-        <p class="info"> Learn how Green Spaces in Edinburgh can reduce pollution.</p>
+        <p class="info"> Communte-based noise measures study to analyse noise pollution.</p>
       </div>
       
-      <div class="card2">
+      <div class="card card300">
         <h5><a href="error.html">Health Benefits <i class="fa-solid fa-circle-info"></i></a></h5>
         <img class="full" src="./images/otherg/health.jpg" alt="health benefits">
-        <p class="info"> How are Green Spaces benefitting neighbourhoods in Edinburgh.</p>
+        <p class="info"> Study analysing the relationship between greenspaces and mental health.</p>
       </div>
     </div>
-    
+
     <div>
-      <p style="font-size:0.8em; color:grey">This article was published as part of the Capital Green Space Project on 13 January, 2023</p>
+      <p class="sg-text">This article was published as part of the Capital Green Space Project on 13 January, 2023</p>
     </div>
   </div>
 
@@ -90,12 +90,6 @@
       </p>
     </div>
   </footer>
-
-  <script>$('.carousel').carousel({
-    interval: 6000,
-    pause: "false"
-    });
-  </script>
 
 </body>
 </html>
