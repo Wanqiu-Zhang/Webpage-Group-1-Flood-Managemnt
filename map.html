@@ -28,6 +28,8 @@
   <script type="text/javascript" src="data/Culvert.js"></script>
   <script type="text/javascript" src="data/Education.js"></script>
   <script type="text/javascript" src="data/Healthcare.js"></script>
+  <script type="text/javascript" src="data/Food.js"></script>
+
   <!-- Leaflet -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
@@ -225,6 +227,8 @@
      function getColor8(d) {
             if (d == 'Education Services Area') { return '#6FBCD8' }
             else if (d == 'Healthcare Services Area') { return '#EAE856' }
+            else if (d == 'Food Services Area') { return '#DDAF8E' }
+
         }
   // Styles functions
   // Greenspace color
@@ -356,17 +360,21 @@
                 fillOpacity: 0.4
             };
         }
+  
+  //Food
+        function style16(feature) {
+            return {
+                fillColor: '#DDAF8E',
+                weight: 1.5,
+                opacity: 1,
+                color: '#DDAF8E',
+                fillOpacity: 0.1
+            };
+        }
+  
+ 
   //style for hight feature
-  function highlightFeature1(e) {
-    var layer = e.target;
-    layer.setStyle({
-      weight: 5,
-      color: '#666',
-      dashArray: '',
-      fillOpacity: 0.7
-    });
-    layer.bringToFront();
-  };
+  
   function highlightFeature2(e) {
     var layer = e.target;
     layer.setStyle({
@@ -389,40 +397,21 @@
     layer.bringToFront();
     info3.update(layer.feature.properties);
   };
-  function highlightFeature4(e) {
-    var layer = e.target;
-    layer.setStyle({
-      weight: 5,
-      color: '#666',
-      dashArray: '',
-      fillOpacity: 0.7
-    });
-    layer.bringToFront();
-  };
-  function resetHighlight1(e) {
-    geojson1.resetStyle(e.target);
-  };
+  
+ 
   function resetHighlight2(e) {
     geojson2.resetStyle(e.target);
     info2.update();
   };
   function resetHighlight3(e) {
-    geojson4.resetStyle(e.target);
+    geojson3.resetStyle(e.target);
     info3.update();
   };
-  function resetHighlight4(e) {
-    geojson3.resetStyle(e.target);
-  };
+ 
   function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
   };
-  function onEachFeature1(feature, layer) {
-    layer.on({
-      mouseover: highlightFeature1,
-      mouseout: resetHighlight1,
-      click: zoomToFeature
-    });
-  };
+  
   function onEachFeature2(feature, layer) {
     layer.on({
       mouseover: highlightFeature2,
@@ -437,13 +426,7 @@
       click: zoomToFeature
     });
   };
-  function onEachFeature4(feature, layer) {
-    layer.on({
-      mouseover: highlightFeature4,
-      mouseout: resetHighlight4,
-      click: zoomToFeature
-    });
-  };
+  
   // sublayer control - woodland
   function turnonwoodland() {
     if ((map.hasLayer(woodland)) || (map.hasLayer(tree))){
@@ -718,7 +701,6 @@
   // Create polygon layers
   var geojson1 = L.geoJson(Greenspace, {
     style: style1,
-    onEachFeature: onEachFeature1
   });
   var geojson2 = L.geoJson(Env, {
     style: style2,
@@ -750,6 +732,9 @@
 
    var geojson16 = L.geoJson(Healthcare, {
             style: style15,
+        })
+   geojson17= L.geoJson(Food, {
+            style: style16,
         })
   var bush = L.geoJSON(polygon,{
     onEachFeature: onEachFeature,
@@ -911,7 +896,7 @@
   var MediumRiskFlooding = L.layerGroup([geojson6, geojson14]);
   var Flooding = L.layerGroup([geojson11, geojson14]).addTo(map);
   var Greenspaces = L.layerGroup([geojson1, geojson14]);
-  var  Soical=L.layerGroup([geojson3,geojson15,geojson16]);
+  var  Soical=L.layerGroup([geojson3,geojson15,geojson16,geojson17]);
 
   var proposal = L.layerGroup([bush, largewood, willow, meadow, river, woodland, prowall, path, bench, entrance, maps, tree]);
   var baseMaps = {"CartoDB Positron": graymap, "OpenStreetMap": osm};
@@ -1023,7 +1008,7 @@
         legend8.onAdd = function (map) {
 
         var div = L.DomUtil.create('div', 'info2 legend8'),
-            grades = ['Education Services Area', 'Healthcare Services Area']
+            grades = ['Education Services Area', 'Healthcare Services Area', 'Food Services Area']
 
             div.innerHTML = '<h4>Social Deprivation</h4>'
 
