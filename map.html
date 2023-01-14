@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,  initial-scale=1">
   <title>CGS Flood Management </title>
-  <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/map.css">
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/map.css">
   <!-- W3CSS -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <!-- Container -->
@@ -93,47 +93,52 @@
             <div id="layer" class="w3-container w3-hide">
               <details>
                 <summary>River Management</summary>
-                <div class="w3-display-container">
-                  <img src="images/dam2.jpg" class="w3-hover-opacity" alt="dam" onclick="turnondam()">
+                <div class="w3-display-container w3-hover-opacity" onclick="turnondam()">
+                  <img src="./images/dam_400.jpg" alt="dam" >
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Dam</div>
                 </div>
-                <div style="margin-top:10px" class="w3-display-container">
-                  <img src="images/barrier.jpeg" class="w3-hover-opacity" alt="Barrier" onclick="turnonbarrier()")>
+
+                <div style="margin-top:10px" class="w3-display-container w3-hover-opacity" onclick="turnonbarrier()">
+                  <img src="./images/barrier_400.jpg" alt="Barrier">
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Barrier</div>
                 </div>
-                <div style="margin-top:10px" class="w3-display-container">
-                  <img src="images/floodgate.jpg" class="w3-hover-opacity" alt="Flood Gate" onclick="turnongate()")>
+
+                <div style="margin-top:10px" class="w3-display-container w3-hover-opacity" onclick="turnongate()">
+                  <img src="./images/floodgate_400.jpg" alt="Flood Gate">
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Flood Gate</div>
                 </div>
-                <div style="margin-top:10px" class="w3-display-container">
-                  <img src="images/culvert.jpg" class="w3-hover-opacity" alt="Culvert" onclick="turnonculvert()")>
+
+                <div style="margin-top:10px" class="w3-display-container w3-hover-opacity" onclick="turnonculvert()">
+                  <img src="./images/culvert_400.jpg" alt="Culvert">
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Culvert</div>
                 </div>
-                <div style="margin-top:10px" class="w3-display-container">
-                  <img src="images/defences.jpg" class="w3-hover-opacity" alt="Defences" onclick="turnondefence()")>
+
+                <div style="margin-top:10px" class="w3-display-container w3-hover-opacity" onclick="turnondefence()">
+                  <img src="./images/defences_400.jpg" alt="Defences" >
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Embankment<p><br><br><br><br></p>Flood Wall</div>
                 </div>
               </details>
               <details>
                 <summary>Proposed Greenspace</summary>
-                <div class="w3-display-container">
-                  <img src="images/woodland.jpg" class="w3-hover-opacity" alt="Woodland!!!" onclick="turnonwoodland()">
+                <div class="w3-display-container w3-hover-opacity" onclick="turnonwoodland()">
+                  <img src="./images/woodland_400.jpg" alt="Woodland!!!" >
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Woodland</div>
                 </div>
-                <div style="margin-top:10px" class="w3-display-container">
-                  <img src="images/meadow.jpg" class="w3-hover-opacity" alt="Meadow" onclick="turnonmeadow()")>
+                
+                <div style="margin-top:10px" class="w3-display-container w3-hover-opacity" onclick="turnonmeadow()">
+                  <img src="./images/meadow_400.jpg" alt="Meadow">
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Meadow</div>
                 </div>
-                <div style="margin-top:10px" class="w3-display-container">
-                  <img src="images/willow.jpeg" class="w3-hover-opacity" alt="Livingwillow" onclick="turnonwillow()">
+                <div style="margin-top:10px" class="w3-display-container w3-hover-opacity" onclick="turnonwillow()">
+                  <img src="./images/willow_400.jpg" alt="Livingwillow" >
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Livingwillow</div>
                 </div>
-                <div style="margin-top:10px" class="w3-display-container">
-                  <img src="images/bush.jpg" class="w3-hover-opacity" alt="Bush" onclick="turnonbush()")>
+                <div style="margin-top:10px" class="w3-display-container w3-hover-opacity" onclick="turnonbush()">
+                  <img src="./images/bush_400.jpg" alt="Bush" >
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Bush</div>
                 </div>
-                <div style="margin-top:10px" class="w3-display-container">
-                  <img src="images/largewood.jpg" class="w3-hover-opacity" alt="Large Wood" onclick="turnonlargewood()")>
+                <div style="margin-top:10px" class="w3-display-container w3-hover-opacity" onclick="turnonlargewood()">
+                  <img src="./images/largewood_400.jpg" alt="Large Wood">
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Large Wood</div>
                 </div>
               </details>
@@ -152,7 +157,7 @@
           -->
         </div>
         <!-- Map -->
-        <div style="height: 89vh" id="mapid" class="col-10">
+        <div style="height: 89vh" id="mapid" class="col-sm-10">
           <!-- Page Guide -->
           <div style="height: 89vh" data-title="Map & Data🗺️" data-intro="Ta-da!! All data will be presented here! You can also use the layer control inside the map on the up right coner to explore more. Enjoy😊!" class="card-demo"></div>
         </div>  
