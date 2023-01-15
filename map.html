@@ -80,7 +80,7 @@
                   <option value="10">Inverleith Park</option>
                   <option value="11">Royal Botanic Garden and Arboretum</option>
                 </select><p></p>
-                <button type="button" onclick="route(option.value)" class="w3-btn w3-teal">Route</button><p></p>
+                <button type="button" onclick="route(option.value)" class="w3-btn" style="background-color: rgb(72, 122, 123); color: white;">Route</button><p></p>
               </form>
             </div>
           </div>
@@ -94,51 +94,51 @@
               <details>
                 <summary>River Management</summary>
                 <div class="w3-display-container w3-hover-opacity" onclick="turnondam()">
-                  <img src="./images/dam_400.jpg" alt="dam" >
+                  <img src="./images/dam.jpg" alt="Dam" >
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Dam</div>
                 </div>
 
                 <div style="margin-top:10px" class="w3-display-container w3-hover-opacity" onclick="turnonbarrier()">
-                  <img src="./images/barrier_400.jpg" alt="Barrier">
+                  <img src="./images/barrier.jpg" alt="Barrier">
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Barrier</div>
                 </div>
 
                 <div style="margin-top:10px" class="w3-display-container w3-hover-opacity" onclick="turnongate()">
-                  <img src="./images/floodgate_400.jpg" alt="Flood Gate">
+                  <img src="./images/floodgate.jpg" alt="Flood Gate">
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Flood Gate</div>
                 </div>
 
                 <div style="margin-top:10px" class="w3-display-container w3-hover-opacity" onclick="turnonculvert()">
-                  <img src="./images/culvert_400.jpg" alt="Culvert">
+                  <img src="./images/culvert.jpg" alt="Culvert">
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Culvert</div>
                 </div>
 
                 <div style="margin-top:10px" class="w3-display-container w3-hover-opacity" onclick="turnondefence()">
-                  <img src="./images/defences_400.jpg" alt="Defences" >
+                  <img src="./images/defences.jpg" alt="Defences" >
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Embankment<p><br><br><br><br></p>Flood Wall</div>
                 </div>
               </details>
               <details>
                 <summary>Proposed Greenspace</summary>
                 <div class="w3-display-container w3-hover-opacity" onclick="turnonwoodland()">
-                  <img src="./images/woodland_400.jpg" alt="Woodland!!!" >
+                  <img src="./images/woodland.jpg" alt="Woodland" >
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Woodland</div>
                 </div>
                 
                 <div style="margin-top:10px" class="w3-display-container w3-hover-opacity" onclick="turnonmeadow()">
-                  <img src="./images/meadow_400.jpg" alt="Meadow">
+                  <img src="./images/meadow.jpg" alt="Meadow">
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Meadow</div>
                 </div>
                 <div style="margin-top:10px" class="w3-display-container w3-hover-opacity" onclick="turnonwillow()">
-                  <img src="./images/willow_400.jpg" alt="Livingwillow" >
+                  <img src="./images/willow.jpg" alt="Livingwillow" >
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Livingwillow</div>
                 </div>
                 <div style="margin-top:10px" class="w3-display-container w3-hover-opacity" onclick="turnonbush()">
-                  <img src="./images/bush_400.jpg" alt="Bush" >
+                  <img src="./images/bush.jpg" alt="Bush" >
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Bush</div>
                 </div>
                 <div style="margin-top:10px" class="w3-display-container w3-hover-opacity" onclick="turnonlargewood()">
-                  <img src="./images/largewood_400.jpg" alt="Large Wood">
+                  <img src="./images/largewood.jpg" alt="Large Wood">
                   <div class="w3-display-middle w3-large" style="color: rgb(255, 255, 255); text-shadow:1.5px 1.5px 0 rgb(0, 0, 0)">Large Wood</div>
                 </div>
               </details>
@@ -343,43 +343,37 @@
       fillOpacity: 0
     };
   };
-  
   //Education
-        function style14(feature) {
-            return {
-                fillColor: '#6FBCD8',
-                weight: 1.5,
-                opacity: 1,
-                color: '#6FBCD8',
-                fillOpacity: 0.4
-            };
-        }
-
-        //Healthcare
-        function style15(feature) {
-            return {
-                fillColor: '#EAE856',
-                weight: 1.5,
-                opacity: 1,
-                color: '#EAE856',
-                fillOpacity: 0.4
-            };
-        }
-  
+  function style14(feature) {
+    return {
+      fillColor: '#6FBCD8',
+      weight: 1.5,
+      opacity: 1,
+      color: '#6FBCD8',
+      fillOpacity: 0.4
+    };
+  };
+  //Healthcare
+  function style15(feature) {
+    return {
+      fillColor: '#EAE856',
+      weight: 1.5,
+      opacity: 1,
+      color: '#EAE856',
+      fillOpacity: 0.4
+    };
+  };
   //Food
-        function style16(feature) {
-            return {
-                fillColor: '#DDAF8E',
-                weight: 1.5,
-                opacity: 1,
-                color: '#DDAF8E',
-                fillOpacity: 0.1
-            };
-        }
-  
- 
+  function style16(feature) {
+    return {
+      fillColor: '#DDAF8E',
+      weight: 1.5,
+      opacity: 1,
+      color: '#DDAF8E',
+      fillOpacity: 0.1
+    };
+  };
   //style for hight feature
-  
   function highlightFeature2(e) {
     var layer = e.target;
     layer.setStyle({
@@ -402,8 +396,6 @@
     layer.bringToFront();
     info3.update(layer.feature.properties);
   };
-  
- 
   function resetHighlight2(e) {
     geojson2.resetStyle(e.target);
     info2.update();
@@ -412,11 +404,9 @@
     geojson3.resetStyle(e.target);
     info3.update();
   };
- 
   function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
   };
-  
   function onEachFeature2(feature, layer) {
     layer.on({
       mouseover: highlightFeature2,
@@ -431,7 +421,6 @@
       click: zoomToFeature
     });
   };
-  
   // sublayer control - woodland
   function turnonwoodland() {
     if ((map.hasLayer(woodland)) || (map.hasLayer(tree))){
@@ -731,16 +720,15 @@
   var geojson14 = L.geoJson(City, {
     style: style13,
   });
-   var geojson15 = L.geoJson(Education, {
-            style: style14,
-        })
-
-   var geojson16 = L.geoJson(Healthcare, {
-            style: style15,
-        })
-   geojson17= L.geoJson(Food, {
-            style: style16,
-        })
+  var geojson15 = L.geoJson(Education, {
+    style: style14,
+  });
+  var geojson16 = L.geoJson(Healthcare, {
+    style: style15,
+  });
+  geojson17= L.geoJson(Food, {
+    style: style16,
+  });
   var bush = L.geoJSON(polygon,{
     onEachFeature: onEachFeature,
     filter: function(poly, layer) {
@@ -1007,24 +995,17 @@
     }
     return div;
   };
-//Social Deprivation
-        var legend8 = L.control({ position: 'bottomright' });
-
-        legend8.onAdd = function (map) {
-
-        var div = L.DomUtil.create('div', 'info2 legend8'),
-            grades = ['Education Services Area', 'Healthcare Services Area', 'Food Services Area']
-
-            div.innerHTML = '<h4>Social Deprivation</h4>'
-
-            for (var i = 0; i < grades.length; i++) {
-
-                div.innerHTML +=
-                    '<i style="background:' + getColor8(grades[i]) + '"></i> ' +
-                    grades[i] + (grades[i + 1] ? '<br>' : '');
-            }
-            return div;
-        };
+  //Social Deprivation
+  var legend8 = L.control({ position: 'bottomright' });
+  legend8.onAdd = function (map) {
+    var div = L.DomUtil.create('div', 'info2 legend8'),
+    grades = ['Education Services Area', 'Healthcare Services Area', 'Food Services Area']
+    div.innerHTML = '<h4>Social Deprivation</h4>'
+    for (var i = 0; i < grades.length; i++) {
+      div.innerHTML += '<i style="background:' + getColor8(grades[i]) + '"></i> ' + grades[i] + (grades[i + 1] ? '<br>' : '');
+    }
+    return div;
+  };
 //DamIcon,BigBarrierIcon,SmallBarrierIcon,GateIcon
 map.on('overlayadd', function (eventLayer) {
   if (eventLayer.name == 'Accessible Greenspace') {
@@ -1100,18 +1081,18 @@ map.on('overlayadd', function (eventLayer) {
     this.removeControl(info3);  
  } 
   else if (eventLayer.name == 'Social Deprivation') {
-                this.removeControl(legend1);
-                this.removeControl(legend2);
-                this.removeControl(legend3);
-                this.removeControl(legend4);
-                this.removeControl(legend5);
-                this.removeControl(legend6);
-                this.removeControl(legend7);
-                this.removeControl(info2);
-                legend8.addTo(map);
-                legend3.addTo(map);
-                info3.addTo(map);
-            }
+    this.removeControl(legend1);
+    this.removeControl(legend2);
+    this.removeControl(legend3);
+    this.removeControl(legend4);
+    this.removeControl(legend5);
+    this.removeControl(legend6);
+    this.removeControl(legend7);
+    this.removeControl(info2);
+    legend8.addTo(map);
+    legend3.addTo(map);
+    info3.addTo(map);
+  }
 });
 </script>
 </html>
