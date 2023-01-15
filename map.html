@@ -145,16 +145,35 @@
             </div>
           </div>
           <!-- Unfinished Quieries Function -->
-          <!--
+          <!--           
+          -- Page Guide --
           <div data-intro="You can perform queries by accessing our Oracle database here." class="card-demo">
+            -- Quieries --
             <button onclick="accordion('oracle')" class="w3-button w3-block w3-left-align">
               <b>Quries</b>
             </button>
             <div id="oracle" class="w3-container w3-hide">
-              <p>Coming soon...</p>
+              <form class="w3-container">
+                -- Choose a table to quiery --
+                <select class="w3-select w3-border" name="option">
+                  <option value="" disabled selected>Select a table</option>
+                  <option value="1">DATA_ZONE</option>
+                  <option value="2">GREENSPACE</option>
+                  <option value="3">ENTRANCE_TO_GREENSPACE</option>
+                  <option value="4">RIVER_MANAGEMENT</option>
+                  <option value="5">SCHOOL</option>
+                  <option value="6">HEALTHCARE_FACILITY</option>
+                  <option value="7">FOOD_SHOP</option>
+                  <option value="8">FLOOD_RISK</option>
+                </select><p></p>
+                -- Need to transfer the option description to python by clicking --
+                <button type="button" class="w3-btn" style="background-color: rgb(72, 122, 123); color: white;">Quiery</button><p></p>
+              </form>
+              -- Use Jinja2 to transfer the quiery result from python (./cgi-bin/oracle.py) --
+              <p>{{results}}</p>
             </div>
           </div>
-          -->
+           -->
         </div>
         <!-- Map -->
         <div style="height: 89vh" id="mapid" class="col-sm-10">
@@ -901,7 +920,9 @@
   layerControl.addOverlay(geojson14, 'Edinburgh City');
   map.on('overlayadd', function(eo) {
     if (eo.name === 'Proposal'){
-        map.setView(L.latLng(55.9164043, -3.3070006), 17)
+      map.setView(L.latLng(55.9164043, -3.3070006), 17)
+    } else {
+      map.setView(L.latLng(55.913, -3.285), 11)
     }
   });
   // Legends
